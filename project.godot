@@ -15,6 +15,10 @@ run/main_scene="res://scene.tscn"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+RotationInput="*res://scripts/rotation_input.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"
@@ -31,9 +35,8 @@ renderer/rendering_method="mobile"
 
 project/breakpoints={}
 project/editorState=[{
-"column": 38,
-"current": true,
-"line": 59,
+"column": 34,
+"line": 3,
 "path": "res://scripts/rotator_2d.gd",
 "type": "file"
 }, {
@@ -43,14 +46,20 @@ project/editorState=[{
 "title": "Basis",
 "type": "doc"
 }, {
-"column": 0,
-"line": 11,
+"column": 25,
+"line": 3,
 "path": "res://scripts/web_permissions_button.gd",
 "type": "file"
 }, {
 "column": 0,
 "line": 0,
 "path": "res://scripts/arc_segment_2d.gd",
+"type": "file"
+}, {
+"column": 22,
+"current": true,
+"line": 4,
+"path": "res://scripts/rotation_input.gd",
 "type": "file"
 }]
 project/xogot_game_id="834_xogot-jam"

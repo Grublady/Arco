@@ -1,7 +1,7 @@
 extends Button
 
 func _ready() -> void:
-	if Rotator2D.is_web:
+	if RotationInput.is_web:
 		show()
 	else:
 		queue_free()
