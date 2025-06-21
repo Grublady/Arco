@@ -19,22 +19,28 @@ script = ExtResource("2_u3cyc")
 
 [node name="ArcSegment2D" type="Node2D" parent="Rotator2D"]
 script = ExtResource("4_u3cyc")
+taper = 0.12
+_outer_radius = 120.0
+_inner_radius = 100.0
+arc_offset = -0.25
+arc_length = 0.9
+
+[node name="Rotator2D" type="Node2D" parent="Rotator2D"]
+script = ExtResource("2_u3cyc")
+rotating = false
+
+[node name="ArcSegment2D" type="Node2D" parent="Rotator2D/Rotator2D"]
+script = ExtResource("4_u3cyc")
 taper = 0.2
 _outer_radius = 80.0
 _inner_radius = 60.0
 arc_offset = -0.25
 arc_length = 0.9
 
-[node name="Rotator2D2" type="Node2D" parent="."]
-script = ExtResource("2_u3cyc")
-
-[node name="ArcSegment2D" type="Node2D" parent="Rotator2D2"]
-script = ExtResource("4_u3cyc")
-taper = 0.12
-_outer_radius = 120.0
-_inner_radius = 100.0
-arc_offset = -0.25
-arc_length = 0.9
+[node name="Timer" type="Timer" parent="Rotator2D"]
+wait_time = 2.0
+one_shot = true
+autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -63,3 +69,6 @@ offset_bottom = 25.0
 text = "Grant permissions"
 script = ExtResource("3_3253y")
 metadata/_edit_use_anchors_ = true
+
+[connection signal="timeout" from="Rotator2D/Timer" to="Rotator2D" method="set" binds= ["rotating", false]]
+[connection signal="timeout" from="Rotator2D/Timer" to="Rotator2D/Rotator2D" method="set" binds= ["rotating", true]]

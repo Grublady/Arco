@@ -2,7 +2,7 @@ extends Node2D
 
 var calibration := PI
 var is_web := false
-var mode := Mode.joystick
+var mode := Mode.sensor
 
 var _previous_joystick := Vector2.ZERO
 

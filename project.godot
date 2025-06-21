@@ -37,8 +37,9 @@ project/breakpoints={
 "res://scripts/rotation_input.gd": PackedInt32Array()
 }
 project/editorState=[{
-"column": 0,
-"line": 1,
+"column": 13,
+"current": true,
+"line": 8,
 "path": "res://scripts/rotator_2d.gd",
 "type": "file"
 }, {
@@ -48,7 +49,7 @@ project/editorState=[{
 "title": "Basis",
 "type": "doc"
 }, {
-"column": 25,
+"column": 0,
 "line": 3,
 "path": "res://scripts/web_permissions_button.gd",
 "type": "file"
@@ -58,9 +59,8 @@ project/editorState=[{
 "path": "res://scripts/arc_segment_2d.gd",
 "type": "file"
 }, {
-"column": 37,
-"current": true,
-"line": 78,
+"column": 0,
+"line": 4,
 "path": "res://scripts/rotation_input.gd",
 "type": "file"
 }]
