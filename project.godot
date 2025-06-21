@@ -31,24 +31,15 @@ renderer/rendering_method="mobile"
 
 project/breakpoints={}
 project/editorState=[{
-"title": "InputEventMouseMotion",
-"type": "doc"
-}, {
-"title": "InputEventMouse",
-"type": "doc"
-}, {
-"title": "InputEventJoypadMotion",
-"type": "doc"
-}, {
 "column": 0,
-"line": 8,
+"current": true,
+"line": 27,
 "path": "res://scripts/rotator_2d.gd",
 "type": "file"
 }, {
 "column": 0,
-"current": true,
-"line": 99,
-"path": "res://scripts/arc_segment_2d.gd",
+"line": 11,
+"path": "res://scripts/web_permissions_button.gd",
 "type": "file"
 }]
 project/xogot_game_id="834_xogot-jam"

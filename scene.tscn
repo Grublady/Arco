@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dy4xqy82d5r4r"]
+[gd_scene load_steps=5 format=3 uid="uid://dy4xqy82d5r4r"]
 
 [ext_resource type="Script" uid="uid://pqsscp47tjbh" path="res://scripts/rotator_2d.gd" id="2_u3cyc"]
+[ext_resource type="Script" uid="uid://crjiesa17t7dc" path="res://scripts/web_permissions_button.gd" id="3_3253y"]
 [ext_resource type="Script" uid="uid://duk8e7n7txdts" path="res://scripts/arc_segment_2d.gd" id="4_u3cyc"]
+
+[sub_resource type="GDScript" id="GDScript_nxogm"]
+script/source = "extends Button
+
+@onready var eval_text: TextEdit = $\"../TextEdit\"
+
+func _pressed() -> void:
+	JavaScriptBridge.eval(eval_text.text, true)"
 
 [node name="Node2D" type="Node2D"]
 
@@ -16,4 +25,39 @@ _inner_radius = 60.0
 arc_offset = -0.25
 arc_length = 0.9
 
+[node name="Rotator2D2" type="Node2D" parent="."]
+position = Vector2(256, -52)
+script = ExtResource("2_u3cyc")
+
+[node name="ArcSegment2D" type="Node2D" parent="Rotator2D2"]
+script = ExtResource("4_u3cyc")
+taper = 0.2
+_outer_radius = 80.0
+_inner_radius = 60.0
+arc_offset = -0.25
+arc_length = 0.9
+
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = -474.0
+offset_top = 108.0
+offset_right = 483.0
+offset_bottom = 303.0
+text = "alert(\"ok\")"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 423.0
+offset_top = -27.0
+offset_right = 537.0
+offset_bottom = 34.0
+text = "Run"
+script = SubResource("GDScript_nxogm")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = -464.0
+offset_top = -36.0
+offset_right = -198.0
+offset_bottom = 25.0
+text = "Grant permissions"
+script = ExtResource("3_3253y")
