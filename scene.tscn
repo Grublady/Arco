@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy4xqy82d5r4r"]
+
+[ext_resource type="Script" uid="uid://pqsscp47tjbh" path="res://scripts/rotator_2d.gd" id="2_u3cyc"]
+[ext_resource type="Script" uid="uid://duk8e7n7txdts" path="res://scripts/arc_segment_2d.gd" id="4_u3cyc"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Rotator2D" type="Node2D" parent="."]
+script = ExtResource("2_u3cyc")
+
+[node name="ArcSegment2D" type="Node2D" parent="Rotator2D"]
+script = ExtResource("4_u3cyc")
+taper = 0.2
+_outer_radius = 80.0
+_inner_radius = 60.0
+arc_offset = -0.25
+arc_length = 0.9
+
+[node name="Camera2D" type="Camera2D" parent="."]
