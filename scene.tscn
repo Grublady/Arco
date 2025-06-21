@@ -27,7 +27,6 @@ arc_length = 0.9
 
 [node name="Rotator2D" type="Node2D" parent="Rotator2D"]
 script = ExtResource("2_u3cyc")
-rotating = false
 
 [node name="ArcSegment2D" type="Node2D" parent="Rotator2D/Rotator2D"]
 script = ExtResource("4_u3cyc")
@@ -71,4 +70,3 @@ script = ExtResource("3_3253y")
 metadata/_edit_use_anchors_ = true
 
 [connection signal="timeout" from="Rotator2D/Timer" to="Rotator2D" method="set" binds= ["rotating", false]]
-[connection signal="timeout" from="Rotator2D/Timer" to="Rotator2D/Rotator2D" method="set" binds= ["rotating", true]]
