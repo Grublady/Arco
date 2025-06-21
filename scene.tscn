@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dy4xqy82d5r4r"]
+[gd_scene load_steps=8 format=3 uid="uid://dy4xqy82d5r4r"]
 
 [ext_resource type="Script" uid="uid://pqsscp47tjbh" path="res://scripts/rotator_2d.gd" id="2_u3cyc"]
 [ext_resource type="Script" uid="uid://crjiesa17t7dc" path="res://scripts/web_permissions_button.gd" id="3_3253y"]
+[ext_resource type="Script" uid="uid://co6wy5tg0krb" path="res://scripts/eventful_audio_stream_player.gd" id="4_m7jmp"]
 [ext_resource type="Script" uid="uid://duk8e7n7txdts" path="res://scripts/arc_segment_2d.gd" id="4_u3cyc"]
+[ext_resource type="AudioStream" uid="uid://bkdw57oiyxpbw" path="res://test.wav" id="4_y2354"]
 
 [sub_resource type="GDScript" id="GDScript_nxogm"]
 script/source = "extends Button
@@ -11,6 +13,22 @@ script/source = "extends Button
 
 func _pressed() -> void:
 	JavaScriptBridge.eval(eval_text.text, true)"
+
+[sub_resource type="GDScript" id="GDScript_u3cyc"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	EventBus.audio_event.connect(_on_audio_event)
+
+func _on_audio_event(id: StringName) -> void:
+	text = id
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [node name="Node2D" type="Node2D"]
 
@@ -68,5 +86,31 @@ offset_bottom = 25.0
 text = "Grant permissions"
 script = ExtResource("3_3253y")
 metadata/_edit_use_anchors_ = true
+
+[node name="EventfulAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_y2354")
+autoplay = true
+script = ExtResource("4_m7jmp")
+events_string = "0.5:test
+1:ok
+1.5:beat
+2:beat again
+3:longer that time
+3.5:we back
+4:more
+5:space
+6:between
+8:hold
+10:dloh
+11:back in it
+12:bang"
+metadata/_custom_type_script = "uid://co6wy5tg0krb"
+
+[node name="Node" type="Label" parent="."]
+offset_left = 95.0
+offset_top = -211.0
+offset_right = 112.0
+offset_bottom = -154.0
+script = SubResource("GDScript_u3cyc")
 
 [connection signal="timeout" from="Rotator2D/Timer" to="Rotator2D" method="set" binds= ["rotating", false]]
