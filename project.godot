@@ -50,12 +50,11 @@ project/editorState=[{
 "type": "doc"
 }, {
 "column": 0,
-"line": 3,
+"line": 15,
 "path": "res://scripts/web_permissions_button.gd",
 "type": "file"
 }, {
 "column": 0,
-"current": true,
 "line": 2,
 "path": "res://scripts/arc_segment_2d.gd",
 "type": "file"

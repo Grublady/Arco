@@ -6,6 +6,10 @@ func _ready() -> void:
 	else:
 		queue_free()
 
+func _process(_delta: float) -> void:
+	if JavaScriptBridge.eval("_godotDeviceOrientationBeta") != 0:
+		queue_free()
+
 func _pressed() -> void:
 	JavaScriptBridge.eval("DeviceOrientationEvent.requestPermission()", true)
 	queue_free()
