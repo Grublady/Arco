@@ -2,7 +2,9 @@ extends Node2D
 
 var calibration := PI
 var is_web := false
-var mode := Mode.mouse
+var mode := Mode.joystick
+
+var _previous_joystick := Vector2.ZERO
 
 enum Mode {
 	sensor,
@@ -68,5 +70,10 @@ func _input(event: InputEvent) -> void:
 	match mode:
 		Mode.joystick:
 			if event is InputEventJoypadMotion:
-				var dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-				rotation = dir.angle() + PI/2
+				var new_joystick := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+				if _previous_joystick.is_zero_approx() or new_joystick.is_zero_approx():
+					_previous_joystick = new_joystick
+					return
+				
+				rotation += _previous_joystick.angle_to(new_joystick)
+				_previous_joystick = new_joystick

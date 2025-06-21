@@ -33,10 +33,12 @@ renderer/rendering_method="mobile"
 
 [xogot]
 
-project/breakpoints={}
+project/breakpoints={
+"res://scripts/rotation_input.gd": PackedInt32Array()
+}
 project/editorState=[{
-"column": 34,
-"line": 3,
+"column": 0,
+"line": 1,
 "path": "res://scripts/rotator_2d.gd",
 "type": "file"
 }, {
@@ -52,13 +54,13 @@ project/editorState=[{
 "type": "file"
 }, {
 "column": 0,
-"line": 0,
+"line": 2,
 "path": "res://scripts/arc_segment_2d.gd",
 "type": "file"
 }, {
-"column": 22,
+"column": 37,
 "current": true,
-"line": 4,
+"line": 78,
 "path": "res://scripts/rotation_input.gd",
 "type": "file"
 }]
