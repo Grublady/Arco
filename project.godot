@@ -31,15 +31,26 @@ renderer/rendering_method="mobile"
 
 project/breakpoints={}
 project/editorState=[{
-"column": 0,
+"column": 38,
 "current": true,
-"line": 27,
+"line": 59,
 "path": "res://scripts/rotator_2d.gd",
 "type": "file"
+}, {
+"title": "Quaternion",
+"type": "doc"
+}, {
+"title": "Basis",
+"type": "doc"
 }, {
 "column": 0,
 "line": 11,
 "path": "res://scripts/web_permissions_button.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 0,
+"path": "res://scripts/arc_segment_2d.gd",
 "type": "file"
 }]
 project/xogot_game_id="834_xogot-jam"

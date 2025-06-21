@@ -26,14 +26,13 @@ arc_offset = -0.25
 arc_length = 0.9
 
 [node name="Rotator2D2" type="Node2D" parent="."]
-position = Vector2(256, -52)
 script = ExtResource("2_u3cyc")
 
 [node name="ArcSegment2D" type="Node2D" parent="Rotator2D2"]
 script = ExtResource("4_u3cyc")
-taper = 0.2
-_outer_radius = 80.0
-_inner_radius = 60.0
+taper = 0.12
+_outer_radius = 120.0
+_inner_radius = 100.0
 arc_offset = -0.25
 arc_length = 0.9
 
@@ -45,6 +44,7 @@ offset_top = 108.0
 offset_right = 483.0
 offset_bottom = 303.0
 text = "alert(\"ok\")"
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="."]
 offset_left = 423.0
@@ -53,6 +53,7 @@ offset_right = 537.0
 offset_bottom = 34.0
 text = "Run"
 script = SubResource("GDScript_nxogm")
+metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="."]
 offset_left = -464.0
@@ -61,3 +62,4 @@ offset_right = -198.0
 offset_bottom = 25.0
 text = "Grant permissions"
 script = ExtResource("3_3253y")
+metadata/_edit_use_anchors_ = true
