@@ -1,8 +1,9 @@
-extends Node2D
+extends Node
 
 var calibration := PI
 var is_web := false
 var mode := Mode.sensor
+var rotation: float = 0
 
 var _previous_joystick := Vector2.ZERO
 
@@ -62,7 +63,7 @@ func _process(_delta: float) -> void:
 				rotation = -gravity_2d.angle() - PI/2
 		Mode.mouse:
 			var mouse_pos := get_viewport().get_mouse_position()
-			var center := get_viewport_rect().get_center()
+			var center := get_viewport().get_visible_rect().size / 2
 			var direction := mouse_pos - center
 			rotation = direction.angle() + PI/2
 
@@ -77,3 +78,6 @@ func _input(event: InputEvent) -> void:
 				
 				rotation += _previous_joystick.angle_to(new_joystick)
 				_previous_joystick = new_joystick
+
+func get_rotation() -> float:
+	return rotation

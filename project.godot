@@ -37,8 +37,7 @@ project/breakpoints={
 "res://scripts/rotation_input.gd": PackedInt32Array()
 }
 project/editorState=[{
-"column": 13,
-"current": true,
+"column": 0,
 "line": 8,
 "path": "res://scripts/rotator_2d.gd",
 "type": "file"
@@ -60,7 +59,8 @@ project/editorState=[{
 "type": "file"
 }, {
 "column": 0,
-"line": 4,
+"current": true,
+"line": 0,
 "path": "res://scripts/rotation_input.gd",
 "type": "file"
 }]
