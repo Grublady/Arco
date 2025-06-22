@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cg6wlc7jkqtqf"]
 
-[ext_resource type="Script" uid="uid://coejdc7tqlu5s" path="res://scripts/arc_2d.gd" id="1_y2dtm"]
+[ext_resource type="Script" uid="uid://02u3vkr5snrr" path="res://scripts/indicator.gd" id="1_y2dtm"]
 
 [node name="Indicator" type="Node2D"]
 script = ExtResource("1_y2dtm")
