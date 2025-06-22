@@ -1,5 +1,7 @@
 class_name EventfulAudioStreamPlayer extends AudioStreamPlayer
 
+@export var custom_latency: float = 0
+
 @export_multiline var events_string: String:
 	set(new_value):
 		events_string = new_value
@@ -15,6 +17,8 @@ class_name EventfulAudioStreamPlayer extends AudioStreamPlayer
 			new_events.append(event)
 		events = new_events
 
+@onready var _output_latency := AudioServer.get_output_latency()
+
 var events: Array[AudioEvent]
 var _previous_time: float = 0
 
@@ -23,7 +27,12 @@ class AudioEvent:
 	var id: StringName
 
 func _process(_delta: float) -> void:
-	var time := get_playback_position() + AudioServer.get_time_since_last_mix()
+	var time := get_playback_position()
+	time += AudioServer.get_time_since_last_mix()
+	time -= _output_latency
+	time -= custom_latency
+	if time <= _previous_time:
+		return
 	var triggered_events := events.filter(
 		func(event) -> bool:
 			return (event.time <= time) and (event.time > _previous_time)
@@ -31,3 +40,6 @@ func _process(_delta: float) -> void:
 	for event in triggered_events:
 		EventBus.audio_event.emit(event.id)
 	_previous_time = time
+
+func reset() -> void:
+	_previous_time = 0

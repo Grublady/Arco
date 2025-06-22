@@ -15,6 +15,10 @@ run/main_scene="res://scene.tscn"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[audio]
+
+driver/mix_rate="48000"
+
 [autoload]
 
 EventBus="*res://scripts/event_bus.gd"
@@ -35,43 +39,23 @@ renderer/rendering_method="mobile"
 [xogot]
 
 project/breakpoints={
+"res://scripts/eventful_audio_stream_player.gd": PackedInt32Array(),
 "res://scripts/rotation_input.gd": PackedInt32Array()
 }
 project/editorState=[{
 "column": 0,
-"line": 0,
-"path": "res://scripts/arc_segment_2d.gd",
-"type": "file"
-}, {
-"column": 0,
-"line": 0,
-"path": "res://scripts/eventful_audio_stream_player.gd",
-"type": "file"
-}, {
-"column": 0,
-"line": 0,
-"path": "res://scripts/event_bus.gd",
-"type": "file"
-}, {
-"column": 0,
-"line": 0,
+"line": 4,
 "path": "res://scripts/rotation_input.gd",
 "type": "file"
 }, {
-"column": 0,
-"line": 0,
-"path": "res://scripts/rotator_2d.gd",
+"column": 34,
+"line": 2,
+"path": "res://scripts/eventful_audio_stream_player.gd",
 "type": "file"
 }, {
-"column": 0,
-"line": 11,
-"path": "res://scripts/web_permissions_button.gd",
-"type": "file"
-}, {
-"column": 2,
-"current": true,
-"line": 125,
-"path": "res://scripts/web_sensors.gd",
+"column": 34,
+"line": 3,
+"path": "res://scripts/event_bus.gd",
 "type": "file"
 }]
 project/xogot_game_id="834_xogot-jam"

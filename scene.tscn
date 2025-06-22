@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dy4xqy82d5r4r"]
+[gd_scene load_steps=11 format=3 uid="uid://dy4xqy82d5r4r"]
 
 [ext_resource type="Script" uid="uid://pqsscp47tjbh" path="res://scripts/rotator_2d.gd" id="2_u3cyc"]
 [ext_resource type="Script" uid="uid://crjiesa17t7dc" path="res://scripts/web_permissions_button.gd" id="3_3253y"]
@@ -14,6 +14,15 @@ script/source = "extends Button
 
 func _pressed() -> void:
 	JavaScriptBridge.eval(eval_text.text, true)"
+
+[sub_resource type="GDScript" id="GDScript_y2354"]
+script/source = "extends LineEdit
+
+
+func _on_text_submitted(new_text: String) -> void:
+	if float(new_text):
+		$\"../..\".custom_latency = float(new_text)
+"
 
 [sub_resource type="GDScript" id="GDScript_u3cyc"]
 script/source = "extends Label
@@ -37,7 +46,7 @@ script/source = "extends AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	EventBus.audio_event.connect(play)"
+	EventBus.audio_event.connect(play.unbind(1).bind(0))"
 
 [node name="Node2D" type="Node2D"]
 metadata/_edit_vertical_guides_ = [218.0]
@@ -122,6 +131,15 @@ offset_right = 53.0
 offset_bottom = -187.0
 text = "Music"
 
+[node name="LineEdit" type="LineEdit" parent="EventfulAudioStreamPlayer/Button"]
+layout_mode = 0
+offset_left = -185.0
+offset_top = 1.0
+offset_right = -57.0
+offset_bottom = 62.0
+text = "-0.1"
+script = SubResource("GDScript_y2354")
+
 [node name="Node" type="Label" parent="."]
 offset_left = 95.0
 offset_top = -211.0
@@ -134,4 +152,6 @@ stream = ExtResource("6_y2354")
 script = SubResource("GDScript_m7jmp")
 
 [connection signal="timeout" from="Rotator2D/Timer" to="Rotator2D" method="set" binds= ["rotating", false]]
+[connection signal="pressed" from="EventfulAudioStreamPlayer/Button" to="EventfulAudioStreamPlayer" method="reset"]
 [connection signal="pressed" from="EventfulAudioStreamPlayer/Button" to="EventfulAudioStreamPlayer" method="play"]
+[connection signal="text_submitted" from="EventfulAudioStreamPlayer/Button/LineEdit" to="EventfulAudioStreamPlayer/Button/LineEdit" method="_on_text_submitted"]
