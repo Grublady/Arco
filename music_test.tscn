@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnucdprcvp5kp"]
+[gd_scene load_steps=7 format=3 uid="uid://cnucdprcvp5kp"]
 
 [ext_resource type="AudioStream" uid="uid://bkdw57oiyxpbw" path="res://test.wav" id="1_cep7b"]
 [ext_resource type="Script" uid="uid://co6wy5tg0krb" path="res://scripts/eventful_audio_stream_player.gd" id="1_x63s6"]
 [ext_resource type="Script" uid="uid://dm4f0devlrdfp" path="res://scripts/ringleader.gd" id="2_x63s6"]
+[ext_resource type="Script" uid="uid://cew56n8hm63qg" path="res://scripts/ring.gd" id="4_8msxv"]
 [ext_resource type="Script" uid="uid://coejdc7tqlu5s" path="res://scripts/arc_2d.gd" id="4_cep7b"]
 [ext_resource type="Script" uid="uid://pqsscp47tjbh" path="res://scripts/rotator_2d.gd" id="4_o4ia6"]
 
@@ -12,17 +13,12 @@
 stream = ExtResource("1_cep7b")
 autoplay = true
 script = ExtResource("1_x63s6")
-events_string = "0.25:print:test message
-0.5:print:ok
-1:print:gotcha
-1:indicator
-2:print:nea
-3:ring2
-3:indicator
-5:ring1
-5:indicator
-6:indicator
-7:indicator"
+events_string = "0:ring1
+1:print:ok
+1:indicator:ring1:1
+2:ring2
+2:indicator:ring2:1
+3:ring1"
 metadata/_custom_type_script = "uid://co6wy5tg0krb"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -31,7 +27,7 @@ metadata/_custom_type_script = "uid://co6wy5tg0krb"
 script = ExtResource("2_x63s6")
 
 [node name="Ring1" type="Node2D" parent="Ringleader"]
-script = ExtResource("4_o4ia6")
+script = ExtResource("4_8msxv")
 metadata/_custom_type_script = "uid://pqsscp47tjbh"
 
 [node name="Arc2D" type="Node2D" parent="Ringleader/Ring1"]
@@ -44,7 +40,6 @@ color = Color(0.842743, 0.363159, 0.929794, 1)
 
 [node name="Ring2" type="Node2D" parent="Ringleader/Ring1"]
 script = ExtResource("4_o4ia6")
-rotating = false
 metadata/_custom_type_script = "uid://pqsscp47tjbh"
 
 [node name="Arc2D" type="Node2D" parent="Ringleader/Ring1/Ring2"]

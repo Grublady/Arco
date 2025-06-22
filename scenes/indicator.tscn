@@ -4,6 +4,7 @@
 
 [node name="Indicator" type="Node2D"]
 script = ExtResource("1_y2dtm")
+target_radius = 50.0
 radius = 200.0
 length = 0.08
 color = Color(0.255234, 0.548691, 1.03285, 1)

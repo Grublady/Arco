@@ -36,7 +36,7 @@ func _process(_delta: float) -> void:
 		return
 	var triggered_events := events.filter(
 		func(event) -> bool:
-			return (event.time <= time) and (event.time > _previous_time)
+			return (event.time < time) and (event.time >= _previous_time)
 	)
 	for event in triggered_events:
 		EventBus.audio_event.emit(event.data)
