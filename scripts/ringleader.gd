@@ -9,6 +9,12 @@ func _ready() -> void:
 
 func _on_audio_event(data: Array[String]) -> void:
 	match data[0]:
+		"ring1":
+			ring1.rotating = true
+			ring2.rotating = false
+		"ring2":
+			ring1.rotating = false
+			ring2.rotating = true
 		"print":
 			print(data[1])
 		_:

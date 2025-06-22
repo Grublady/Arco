@@ -17,7 +17,9 @@ script = ExtResource("1_x63s6")
 events_string = "0.25:print:test message
 0.5:print:ok
 1:print:gotcha
-2:print:nea"
+2:print:nea
+3:ring2
+5:ring1"
 metadata/_custom_type_script = "uid://co6wy5tg0krb"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -30,6 +32,7 @@ radius = 95.0
 width = 25.0
 gap = 0.08
 color = Color(0.842987, 0.362564, 0.928802, 1)
+auto_offset_enabled = null
 
 [node name="CollisionShape2D" parent="Ringleader/Ring1/Area2D" index="0"]
 shape = SubResource("CircleShape2D_x63s6")
@@ -37,6 +40,8 @@ shape = SubResource("CircleShape2D_x63s6")
 [node name="Ring2" parent="Ringleader/Ring1" instance=ExtResource("3_x63s6")]
 width = 20.0
 color = Color(1.06108, 0.60968, 0.532837, 1)
+rotating = false
+auto_offset_enabled = null
 
 [editable path="Ringleader/Ring1"]
 [editable path="Ringleader/Ring1/Ring2"]

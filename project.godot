@@ -66,14 +66,19 @@ project/editorState=[{
 "type": "file"
 }, {
 "column": 9,
-"current": true,
-"line": 14,
+"line": 20,
 "path": "res://scripts/ringleader.gd",
 "type": "file"
 }, {
 "column": 0,
-"line": 7,
+"current": true,
+"line": 21,
 "path": "res://scripts/rotator_2d.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 0,
+"path": "res://scripts/ring.gd",
 "type": "file"
 }]
 project/xogot_game_id="834_xogot-jam"
