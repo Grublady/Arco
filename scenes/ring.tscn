@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dad6xolvaar6e"]
+
+[ext_resource type="Script" uid="uid://coejdc7tqlu5s" path="res://scripts/arc_2d.gd" id="1_03kdj"]
+
+[node name="Ring" type="Node2D"]
+script = ExtResource("1_03kdj")
+length = null
+offset = null
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

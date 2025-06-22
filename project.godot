@@ -66,7 +66,8 @@ project/editorState=[{
 "type": "file"
 }, {
 "column": 9,
-"line": 20,
+"current": true,
+"line": 31,
 "path": "res://scripts/ringleader.gd",
 "type": "file"
 }, {
@@ -75,10 +76,14 @@ project/editorState=[{
 "path": "res://scripts/rotator_2d.gd",
 "type": "file"
 }, {
-"column": 0,
-"current": true,
-"line": 0,
+"column": 16,
+"line": 26,
 "path": "res://scripts/ring.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 2,
+"path": "res://scripts/arc_2d.gd",
 "type": "file"
 }]
 project/xogot_game_id="834_xogot-jam"
