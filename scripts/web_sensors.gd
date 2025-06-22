@@ -1,4 +1,4 @@
-class_name WebSensors extends Object
+class_name WebSensors
 
 static var _orientation: JavaScriptObject
 static var _acceleration: JavaScriptObject
