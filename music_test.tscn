@@ -11,20 +11,27 @@
 
 [node name="EventfulAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_cep7b")
-autoplay = true
 script = ExtResource("1_x63s6")
 events_string = "0:ring1
 1:print:ok
 1:indicator:ring1:1
+2:check:ring1:1
 2:ring2
-2:indicator:ring2:1
+2:indicator:ring2:0.5
+3:check:ring2:0.5
 3:ring1"
 metadata/_custom_type_script = "uid://co6wy5tg0krb"
+
+[node name="Timer" type="Timer" parent="EventfulAudioStreamPlayer"]
+one_shot = true
+autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Ringleader" type="Node2D" parent="."]
 script = ExtResource("2_x63s6")
+ring1_indicator_color = Color(0.551224, 0.100189, 0.848236, 1)
+ring2_indicator_color = Color(1.00957, 0.362, 0.428925, 1)
 
 [node name="Ring1" type="Node2D" parent="Ringleader"]
 script = ExtResource("4_8msxv")
@@ -48,3 +55,5 @@ width = 20.0
 length = 0.85
 offset = 0.25
 color = Color(1.06116, 0.609116, 0.532013, 1)
+
+[connection signal="timeout" from="EventfulAudioStreamPlayer/Timer" to="EventfulAudioStreamPlayer" method="play"]
