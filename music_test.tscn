@@ -1,12 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnucdprcvp5kp"]
+[gd_scene load_steps=5 format=3 uid="uid://cnucdprcvp5kp"]
 
 [ext_resource type="AudioStream" uid="uid://bkdw57oiyxpbw" path="res://test.wav" id="1_cep7b"]
 [ext_resource type="Script" uid="uid://co6wy5tg0krb" path="res://scripts/eventful_audio_stream_player.gd" id="1_x63s6"]
 [ext_resource type="Script" uid="uid://dm4f0devlrdfp" path="res://scripts/ringleader.gd" id="2_x63s6"]
-[ext_resource type="PackedScene" uid="uid://bp5oelfcxhdgh" path="res://scenes/ring.tscn" id="3_x63s6"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_x63s6"]
-radius = 57.0351
+[ext_resource type="Script" uid="uid://coejdc7tqlu5s" path="res://scripts/ring.gd" id="4_cep7b"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -27,21 +24,14 @@ metadata/_custom_type_script = "uid://co6wy5tg0krb"
 [node name="Ringleader" type="Node2D" parent="."]
 script = ExtResource("2_x63s6")
 
-[node name="Ring1" parent="Ringleader" instance=ExtResource("3_x63s6")]
+[node name="Ring1" type="Node2D" parent="Ringleader"]
+script = ExtResource("4_cep7b")
 radius = 95.0
 width = 25.0
 gap = 0.08
-color = Color(0.842987, 0.362564, 0.928802, 1)
-auto_offset_enabled = null
+color = Color(0.842743, 0.363159, 0.929794, 1)
 
-[node name="CollisionShape2D" parent="Ringleader/Ring1/Area2D" index="0"]
-shape = SubResource("CircleShape2D_x63s6")
-
-[node name="Ring2" parent="Ringleader/Ring1" instance=ExtResource("3_x63s6")]
+[node name="Ring2" type="Node2D" parent="Ringleader/Ring1"]
+script = ExtResource("4_cep7b")
 width = 20.0
-color = Color(1.06108, 0.60968, 0.532837, 1)
-rotating = false
-auto_offset_enabled = null
-
-[editable path="Ringleader/Ring1"]
-[editable path="Ringleader/Ring1/Ring2"]
+color = Color(1.06116, 0.609116, 0.532013, 1)

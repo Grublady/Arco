@@ -71,12 +71,12 @@ project/editorState=[{
 "type": "file"
 }, {
 "column": 0,
-"current": true,
-"line": 21,
+"line": 11,
 "path": "res://scripts/rotator_2d.gd",
 "type": "file"
 }, {
 "column": 0,
+"current": true,
 "line": 0,
 "path": "res://scripts/ring.gd",
 "type": "file"

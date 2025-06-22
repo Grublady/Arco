@@ -33,4 +33,4 @@ func _process(delta: float) -> void:
 func _draw() -> void:
 	var start_angle := -PI/2 + gap * TAU
 	var end_angle := 3*PI/2 - gap * TAU
-	draw_arc(Vector2.ZERO, radius, start_angle, end_angle, 32, color, width, true)
+	draw_arc(Vector2.ZERO, radius, start_angle, end_angle, 64, color, width, true)
