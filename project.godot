@@ -65,20 +65,15 @@ project/editorState=[{
 "path": "res://scripts/arc_segment_2d.gd",
 "type": "file"
 }, {
-"column": 0,
-"line": 38,
+"column": 9,
+"current": true,
+"line": 14,
 "path": "res://scripts/ringleader.gd",
 "type": "file"
 }, {
 "column": 0,
 "line": 7,
 "path": "res://scripts/rotator_2d.gd",
-"type": "file"
-}, {
-"column": 0,
-"current": true,
-"line": 8,
-"path": "res://scripts/ring.gd",
 "type": "file"
 }]
 project/xogot_game_id="834_xogot-jam"
