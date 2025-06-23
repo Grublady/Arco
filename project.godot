@@ -50,8 +50,9 @@ project/editorState=[{
 "path": "res://scripts/rotation_input.gd",
 "type": "file"
 }, {
-"column": 0,
-"line": 26,
+"column": 48,
+"current": true,
+"line": 42,
 "path": "res://scripts/eventful_audio_stream_player.gd",
 "type": "file"
 }, {
@@ -65,9 +66,8 @@ project/editorState=[{
 "path": "res://scripts/arc_segment_2d.gd",
 "type": "file"
 }, {
-"column": 47,
-"current": true,
-"line": 27,
+"column": 0,
+"line": 59,
 "path": "res://scripts/ringleader.gd",
 "type": "file"
 }, {

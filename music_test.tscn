@@ -15,15 +15,16 @@
 stream = ExtResource("1_d0cnn")
 script = ExtResource("1_x63s6")
 tempo = 140.0
-events_string = "0:0:activate:ring1
-1:0:print:ok
-1:2:pin:ring1:1
-2:2:pin:ring2:0.2
-4:2:indicator:ring1:0
-5:2:indicator:ring1:-0.2"
+events_string = "-1:0:activate:ring1
+-1:0:print:ok
+0:4:pin:ring1:1
+2:4:pin:ring2:0.25
+4:4:indicator:ring1:0
+6:4:indicator:ring1:-0.25"
 metadata/_custom_type_script = "uid://co6wy5tg0krb"
 
 [node name="Timer" type="Timer" parent="EventfulAudioStreamPlayer"]
+wait_time = 2.0
 one_shot = true
 autostart = true
 

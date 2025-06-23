@@ -54,10 +54,10 @@ func create_indicator(ring_name: String, event_rotation: float, event_duration: 
 	new_indicator.radius = 300
 	match ring_name:
 		"ring1":
-			new_indicator.target_radius = ring1_arc.radius
+			new_indicator.target_radius = ring1_arc.radius + ring1_arc.width / 4
 			new_indicator.color = ring1_indicator_color
 		"ring2":
-			new_indicator.target_radius = ring2_arc.radius
+			new_indicator.target_radius = ring2_arc.radius + ring2_arc.width / 4
 			new_indicator.color = ring2_indicator_color
 	new_indicator.rotation = TAU * event_rotation
 	new_indicator.tween_time = event_duration

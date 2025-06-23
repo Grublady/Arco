@@ -34,7 +34,17 @@ class_name EventfulAudioStreamPlayer extends AudioStreamPlayer
 var events: Array[EventBus.AudioEvent]
 var _previous_time: float = 0
 
+func _ready() -> void:
+	var init_events := events.filter(
+		func(event) -> bool:
+			return (event.time < 0)
+	)
+	for event in init_events:
+		EventBus.audio_event.emit.call_deferred(event)
+
 func _process(_delta: float) -> void:
+	if not playing:
+		return
 	var time := get_playback_position()
 	time += AudioServer.get_time_since_last_mix()
 	time -= _output_latency
