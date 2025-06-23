@@ -50,14 +50,13 @@ project/editorState=[{
 "path": "res://scripts/rotation_input.gd",
 "type": "file"
 }, {
-"column": 48,
-"current": true,
-"line": 42,
+"column": 30,
+"line": 29,
 "path": "res://scripts/eventful_audio_stream_player.gd",
 "type": "file"
 }, {
-"column": 0,
-"line": 11,
+"column": 51,
+"line": 12,
 "path": "res://scripts/event_bus.gd",
 "type": "file"
 }, {
@@ -66,8 +65,9 @@ project/editorState=[{
 "path": "res://scripts/arc_segment_2d.gd",
 "type": "file"
 }, {
-"column": 0,
-"line": 59,
+"column": 34,
+"current": true,
+"line": 46,
 "path": "res://scripts/ringleader.gd",
 "type": "file"
 }, {
@@ -85,7 +85,7 @@ project/editorState=[{
 "type": "doc"
 }, {
 "column": 0,
-"line": 3,
+"line": 10,
 "path": "res://scripts/indicator.gd",
 "type": "file"
 }, {
@@ -108,6 +108,11 @@ project/editorState=[{
 "column": 0,
 "line": 0,
 "path": "res://scripts/ui_rotator.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 9,
+"path": "res://scripts/pin.gd",
 "type": "file"
 }]
 project/xogot_game_id="834_xogot-jam"

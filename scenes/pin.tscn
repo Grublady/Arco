@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bug1r4jqike8b"]
+
+[ext_resource type="Script" uid="uid://18npi605tqno" path="res://scripts/pin.gd" id="1_p1640"]
+
+[node name="Pin" type="Node2D"]
+script = ExtResource("1_p1640")
+radius = 300.0
+width = 40.0
+length = 0.01
