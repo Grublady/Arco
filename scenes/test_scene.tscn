@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://dy4xqy82d5r4r"]
 
-[ext_resource type="Script" uid="uid://pqsscp47tjbh" path="res://scripts/rotator_2d.gd" id="2_u3cyc"]
-[ext_resource type="Script" uid="uid://crjiesa17t7dc" path="res://scripts/web_permissions_button.gd" id="3_3253y"]
-[ext_resource type="Script" uid="uid://co6wy5tg0krb" path="res://scripts/eventful_audio_stream_player.gd" id="4_m7jmp"]
-[ext_resource type="Script" uid="uid://duk8e7n7txdts" path="res://scripts/arc_segment_2d.gd" id="4_u3cyc"]
-[ext_resource type="AudioStream" uid="uid://bkdw57oiyxpbw" path="res://test.wav" id="4_y2354"]
-[ext_resource type="AudioStream" uid="uid://d2d3q7yc5rdm1" path="res://click.wav" id="6_y2354"]
+[ext_resource type="Script" uid="uid://pqsscp47tjbh" path="res://scripts/rotator_2d.gd" id="1_3qnke"]
+[ext_resource type="Script" uid="uid://duk8e7n7txdts" path="res://scripts/arc_segment_2d.gd" id="2_wtsjf"]
+[ext_resource type="Script" uid="uid://crjiesa17t7dc" path="res://scripts/web_permissions_button.gd" id="3_rnaij"]
+[ext_resource type="AudioStream" uid="uid://bkdw57oiyxpbw" path="res://test.wav" id="4_h3xc6"]
+[ext_resource type="Script" uid="uid://co6wy5tg0krb" path="res://scripts/eventful_audio_stream_player.gd" id="5_s36qc"]
+[ext_resource type="AudioStream" uid="uid://d2d3q7yc5rdm1" path="res://click.wav" id="6_6qxox"]
 
 [sub_resource type="GDScript" id="GDScript_nxogm"]
 script/source = "extends Button
@@ -52,20 +52,20 @@ func _ready() -> void:
 metadata/_edit_vertical_guides_ = [218.0]
 
 [node name="Rotator2D" type="Node2D" parent="."]
-script = ExtResource("2_u3cyc")
+script = ExtResource("1_3qnke")
 
 [node name="ArcSegment2D" type="Node2D" parent="Rotator2D"]
-script = ExtResource("4_u3cyc")
+script = ExtResource("2_wtsjf")
 taper = 0.12
 _outer_radius = 120.0
 _inner_radius = 100.0
 arc_length = 0.9
 
 [node name="Rotator2D" type="Node2D" parent="Rotator2D"]
-script = ExtResource("2_u3cyc")
+script = ExtResource("1_3qnke")
 
 [node name="ArcSegment2D" type="Node2D" parent="Rotator2D/Rotator2D"]
-script = ExtResource("4_u3cyc")
+script = ExtResource("2_wtsjf")
 taper = 0.2
 _outer_radius = 80.0
 _inner_radius = 60.0
@@ -101,12 +101,12 @@ offset_top = -36.0
 offset_right = -198.0
 offset_bottom = 25.0
 text = "Grant permissions"
-script = ExtResource("3_3253y")
+script = ExtResource("3_rnaij")
 metadata/_edit_use_anchors_ = true
 
 [node name="EventfulAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_y2354")
-script = ExtResource("4_m7jmp")
+stream = ExtResource("4_h3xc6")
+script = ExtResource("5_s36qc")
 events_string = "0.5:test
 1:ok
 1.5:beat
@@ -146,7 +146,7 @@ offset_bottom = -154.0
 script = SubResource("GDScript_u3cyc")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_y2354")
+stream = ExtResource("6_6qxox")
 script = SubResource("GDScript_m7jmp")
 
 [connection signal="timeout" from="Rotator2D/Timer" to="Rotator2D" method="set" binds= ["rotating", false]]

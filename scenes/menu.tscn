@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://10dgd71jxakk"]
+
+[ext_resource type="Script" uid="uid://crjiesa17t7dc" path="res://scripts/web_permissions_button.gd" id="1_lti8b"]
+[ext_resource type="Script" uid="uid://cxln43a233oir" path="res://scripts/input_mode_button.gd" id="2_vjb58"]
+
+[sub_resource type="GDScript" id="GDScript_vsb4k"]
+script/source = "extends Button
+
+func _pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/music_test.tscn\")"
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 24.0
+offset_bottom = 20.0
+text = "Button"
+script = SubResource("GDScript_vsb4k")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_top = 119.0
+offset_right = 114.0
+offset_bottom = 180.0
+text = "Permissions"
+script = ExtResource("1_lti8b")
+
+[node name="SensorsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 427.0
+offset_right = 112.0
+offset_bottom = 488.0
+text = "Sensors"
+script = ExtResource("2_vjb58")
+
+[node name="MouseButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 430.0
+offset_right = 322.0
+offset_bottom = 491.0
+text = "Mouse"
+script = ExtResource("2_vjb58")
+mode = 1
+
+[node name="JoystickButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 403.0
+offset_top = 430.0
+offset_right = 531.0
+offset_bottom = 491.0
+text = "Joystick"
+script = ExtResource("2_vjb58")
+mode = 2
