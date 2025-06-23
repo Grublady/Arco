@@ -1,6 +1,7 @@
 @tool
 extends Node2D
 
+@export var tempo: float = 120
 @export var ring1_indicator_color: Color = Color.BLUE
 @export var ring2_indicator_color: Color = Color.RED
 @export var check_hit_range: float = .1
@@ -9,10 +10,12 @@ extends Node2D
 @onready var ring2 := $Ring1/Ring2
 @onready var ring1_arc := $Ring1/Arc2D
 @onready var ring2_arc := $Ring1/Ring2/Arc2D
+@onready var _time_factor := 60 / tempo
 var indicator_scene: PackedScene = preload("res://scenes/indicator.tscn")
 
 func _ready() -> void:
 	EventBus.audio_event.connect(_on_audio_event)
+	assert(tempo == $"../EventfulAudioStreamPlayer".tempo)
 
 func _on_audio_event(data: Array[String]) -> void:
 	match data[0]:
@@ -38,7 +41,7 @@ func _on_audio_event(data: Array[String]) -> void:
 					new_indicator.color = ring2_indicator_color
 			new_indicator.rotation = TAU * float(data[2])
 			if data.size() >= 4:
-				new_indicator.tween_time = float(data[3])
+				new_indicator.tween_time = float(data[3]) * _time_factor
 			add_child(new_indicator)
 		"check":
 			var current_rotation: float = 0

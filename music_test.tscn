@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cnucdprcvp5kp"]
 
-[ext_resource type="AudioStream" uid="uid://bkdw57oiyxpbw" path="res://test.wav" id="1_cep7b"]
+[ext_resource type="AudioStream" uid="uid://byi2bq8xvpe2x" path="res://xogot_jam_jam.ogg" id="1_d0cnn"]
 [ext_resource type="Script" uid="uid://co6wy5tg0krb" path="res://scripts/eventful_audio_stream_player.gd" id="1_x63s6"]
 [ext_resource type="Script" uid="uid://dm4f0devlrdfp" path="res://scripts/ringleader.gd" id="2_x63s6"]
 [ext_resource type="Script" uid="uid://428mtpgw1rlv" path="res://scripts/ui_rotator.gd" id="3_d0cnn"]
@@ -12,8 +12,9 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="EventfulAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_cep7b")
+stream = ExtResource("1_d0cnn")
 script = ExtResource("1_x63s6")
+tempo = 140.0
 events_string = "0:ring1
 1:print:ok
 1:indicator:ring1:1
@@ -21,7 +22,15 @@ events_string = "0:ring1
 2:ring2
 2:indicator:ring2:0.5
 3:check:ring2:0.5
-3:ring1"
+3:ring1
+4:indicator:ring1:1
+5:indicator:ring1:1
+6:indicator:ring1:1
+7:indicator:ring1:1
+8:indicator:ring1:1
+9:indicator:ring1:1
+10:indicator:ring1:1
+11:indicator:ring1:1"
 metadata/_custom_type_script = "uid://co6wy5tg0krb"
 
 [node name="Timer" type="Timer" parent="EventfulAudioStreamPlayer"]
@@ -44,6 +53,7 @@ script = ExtResource("7_2n0hk")
 
 [node name="Ringleader" type="Node2D" parent="."]
 script = ExtResource("2_x63s6")
+tempo = 140.0
 ring1_indicator_color = Color(0.551224, 0.100189, 0.848236, 1)
 ring2_indicator_color = Color(1.00957, 0.362, 0.428925, 1)
 

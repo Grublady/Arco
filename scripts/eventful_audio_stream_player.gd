@@ -1,6 +1,7 @@
 class_name EventfulAudioStreamPlayer extends AudioStreamPlayer
 
 @export var custom_latency: float = 0
+@export var tempo: float = 120
 
 @export_multiline var events_string: String:
 	set(new_value):
@@ -13,7 +14,7 @@ class_name EventfulAudioStreamPlayer extends AudioStreamPlayer
 			if components.size() < 2:
 				continue
 			var event := AudioEvent.new()
-			event.time = components.pop_front()
+			event.time = float(components.pop_front()) * 60 / tempo
 			event.data = components
 			new_events.append(event)
 		events = new_events
