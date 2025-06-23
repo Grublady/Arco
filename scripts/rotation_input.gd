@@ -12,10 +12,14 @@ enum Mode {
 	joystick
 }
 
+func _ready() -> void:
+	if OS.has_feature("web"):
+		WebSensors.setup()
+
 func _process(_delta: float) -> void:
 	match mode:
 		Mode.sensor:
-			if OS.has_feature("web") and WebSensors.is_setup:
+			if OS.has_feature("web"):
 				_update_from_sensors_web()
 			else:
 				_update_from_sensors()
