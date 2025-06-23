@@ -1,7 +1,7 @@
 extends Node
 
 var calibration := PI
-var mode := Mode.mouse
+var mode := Mode.sensor
 var rotation: float = 0
 
 var _previous_joystick := Vector2.ZERO
