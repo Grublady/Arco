@@ -1,5 +1,7 @@
 class_name WebSensors
 
+static var is_setup: bool = false
+
 static var _orientation: JavaScriptObject
 static var _acceleration: JavaScriptObject
 static var _gravity: JavaScriptObject
@@ -17,6 +19,8 @@ if (typeof DeviceMotionEvent.requestPermission === "function") {
 static func setup() -> void:
 	if not OS.has_feature("web"):
 		return
+	
+	is_setup = true
 	
 	JavaScriptBridge.eval("""
 var _godotDeviceOrientation = { x: 0, y: 0, z: 0 };

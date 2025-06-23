@@ -7,9 +7,10 @@ func _ready() -> void:
 		queue_free()
 
 func _process(_delta: float) -> void:
-	if WebSensors.get_orientation().x != 0:
+	if WebSensors.is_setup and WebSensors.get_orientation().x != 0:
 		queue_free()
 
 func _pressed() -> void:
+	WebSensors.setup()
 	WebSensors.request_permission()
 	queue_free()

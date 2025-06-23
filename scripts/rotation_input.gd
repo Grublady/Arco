@@ -15,7 +15,7 @@ enum Mode {
 func _process(_delta: float) -> void:
 	match mode:
 		Mode.sensor:
-			if OS.has_feature("web"):
+			if OS.has_feature("web") and WebSensors.is_setup:
 				_update_from_sensors_web()
 			else:
 				_update_from_sensors()
