@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnucdprcvp5kp"]
+[gd_scene load_steps=9 format=3 uid="uid://cnucdprcvp5kp"]
 
 [ext_resource type="AudioStream" uid="uid://bkdw57oiyxpbw" path="res://test.wav" id="1_cep7b"]
 [ext_resource type="Script" uid="uid://co6wy5tg0krb" path="res://scripts/eventful_audio_stream_player.gd" id="1_x63s6"]
 [ext_resource type="Script" uid="uid://dm4f0devlrdfp" path="res://scripts/ringleader.gd" id="2_x63s6"]
+[ext_resource type="Script" uid="uid://428mtpgw1rlv" path="res://scripts/ui_rotator.gd" id="3_d0cnn"]
 [ext_resource type="Script" uid="uid://cew56n8hm63qg" path="res://scripts/ring.gd" id="4_8msxv"]
 [ext_resource type="Script" uid="uid://coejdc7tqlu5s" path="res://scripts/arc_2d.gd" id="4_cep7b"]
 [ext_resource type="Script" uid="uid://pqsscp47tjbh" path="res://scripts/rotator_2d.gd" id="4_o4ia6"]
@@ -28,6 +29,18 @@ one_shot = true
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="UIRotator" type="Node2D" parent="."]
+script = ExtResource("3_d0cnn")
+metadata/_custom_type_script = "uid://pqsscp47tjbh"
+
+[node name="Label" type="Label" parent="UIRotator"]
+offset_left = -44.0
+offset_top = -159.0
+offset_right = 45.0
+offset_bottom = -102.0
+text = "Score"
+script = ExtResource("7_2n0hk")
 
 [node name="Ringleader" type="Node2D" parent="."]
 script = ExtResource("2_x63s6")
@@ -56,13 +69,5 @@ width = 20.0
 length = 0.85
 offset = 0.25
 color = Color(1.06116, 0.609116, 0.532013, 1)
-
-[node name="Label" type="Label" parent="."]
-offset_left = -512.0
-offset_top = -271.0
-offset_right = -425.0
-offset_bottom = -214.0
-text = "Score"
-script = ExtResource("7_2n0hk")
 
 [connection signal="timeout" from="EventfulAudioStreamPlayer/Timer" to="EventfulAudioStreamPlayer" method="play"]

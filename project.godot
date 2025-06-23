@@ -45,9 +45,9 @@ project/breakpoints={
 "res://scripts/rotation_input.gd": PackedInt32Array()
 }
 project/editorState=[{
-"column": 38,
+"column": 22,
 "current": true,
-"line": 36,
+"line": 3,
 "path": "res://scripts/rotation_input.gd",
 "type": "file"
 }, {
@@ -56,8 +56,8 @@ project/editorState=[{
 "path": "res://scripts/eventful_audio_stream_player.gd",
 "type": "file"
 }, {
-"column": 0,
-"line": 5,
+"column": 51,
+"line": 7,
 "path": "res://scripts/event_bus.gd",
 "type": "file"
 }, {
@@ -72,7 +72,7 @@ project/editorState=[{
 "type": "file"
 }, {
 "column": 0,
-"line": 3,
+"line": 6,
 "path": "res://scripts/rotator_2d.gd",
 "type": "file"
 }, {
@@ -108,6 +108,11 @@ project/editorState=[{
 "column": 37,
 "line": 13,
 "path": "res://scripts/score.gd",
+"type": "file"
+}, {
+"column": 22,
+"line": 8,
+"path": "res://scripts/ui_rotator.gd",
 "type": "file"
 }]
 project/xogot_game_id="834_xogot-jam"
