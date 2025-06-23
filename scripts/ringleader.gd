@@ -50,12 +50,13 @@ func _on_audio_event(data: Array[String]) -> void:
 				"ring2":
 					current_rotation = ring2.global_rotation
 					location_radius = ring2_arc.radius
+			
 			var target_rotation := float(data[2]) * TAU
-			var success := (
-				current_rotation <= target_rotation + (PI * check_hit_range)
-				and current_rotation >= target_rotation - (PI * check_hit_range)
-			)
+			var difference := angle_difference(target_rotation, current_rotation)
+			var success := (absf(difference) <= PI * check_hit_range)
+			
 			var event_position := to_global(position + Vector2.UP.rotated(target_rotation) * location_radius)
+			
 			EventBus.check_event.emit(success, event_position, current_rotation)
 		"print":
 			print(data[1])

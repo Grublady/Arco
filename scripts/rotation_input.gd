@@ -1,7 +1,7 @@
 extends Node
 
 var calibration := PI
-var mode := Mode.mouse
+var mode := Mode.sensor
 var rotation: float = 0
 
 var _previous_joystick := Vector2.ZERO
@@ -34,7 +34,7 @@ func get_rotation() -> float:
 func _update_from_sensors() -> void:
 	var device_gravity: Vector3 = Input.get_gravity()
 	var gravity_2d := Vector2(device_gravity.x, device_gravity.y)
-	rotation = -gravity_2d.angle() - PI
+	rotation = -gravity_2d.angle() - PI/2
 
 func _update_from_sensors_web() -> void:
 	var beta: float = WebSensors.get_orientation().x
