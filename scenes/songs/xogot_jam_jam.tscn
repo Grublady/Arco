@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2lda7y3amp8s"]
+
+[ext_resource type="PackedScene" uid="uid://cnucdprcvp5kp" path="res://scenes/song.tscn" id="1_tbble"]
+[ext_resource type="AudioStream" uid="uid://byi2bq8xvpe2x" path="res://xogot_jam_jam.ogg" id="2_bspd6"]
+
+[node name="XogotJamJam" instance=ExtResource("1_tbble")]
+
+[node name="EventfulAudioStreamPlayer" parent="." index="0"]
+stream = ExtResource("2_bspd6")
+tempo = 140.0
+events_string = "-1:0:activate:ring1
+-1:0:print:ok1
+0:4:pin:ring1:1
+2:4:pin:ring2:0.25
+4:4:indicator:ring1:0
+6:4:indicator:ring1:-0.25"

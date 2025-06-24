@@ -1,26 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://cnucdprcvp5kp"]
+[gd_scene load_steps=8 format=3 uid="uid://cnucdprcvp5kp"]
 
-[ext_resource type="AudioStream" uid="uid://byi2bq8xvpe2x" path="res://xogot_jam_jam.ogg" id="1_rseh7"]
-[ext_resource type="Script" uid="uid://co6wy5tg0krb" path="res://scripts/eventful_audio_stream_player.gd" id="2_xs2qq"]
-[ext_resource type="Script" uid="uid://428mtpgw1rlv" path="res://scripts/ui_rotator.gd" id="3_jvgl7"]
-[ext_resource type="Script" uid="uid://bi7tqer534emi" path="res://scripts/score.gd" id="4_fbwxh"]
-[ext_resource type="Script" uid="uid://dm4f0devlrdfp" path="res://scripts/ringleader.gd" id="5_havgd"]
-[ext_resource type="Script" uid="uid://cew56n8hm63qg" path="res://scripts/ring.gd" id="6_qtq32"]
-[ext_resource type="Script" uid="uid://coejdc7tqlu5s" path="res://scripts/arc_2d.gd" id="7_cvfru"]
-[ext_resource type="Script" uid="uid://pqsscp47tjbh" path="res://scripts/rotator_2d.gd" id="8_ddgu7"]
+[ext_resource type="Script" uid="uid://co6wy5tg0krb" path="res://scripts/eventful_audio_stream_player.gd" id="2_2luy8"]
+[ext_resource type="Script" uid="uid://428mtpgw1rlv" path="res://scripts/ui_rotator.gd" id="3_x0nux"]
+[ext_resource type="Script" uid="uid://bi7tqer534emi" path="res://scripts/score.gd" id="4_d6eh3"]
+[ext_resource type="Script" uid="uid://dm4f0devlrdfp" path="res://scripts/ringleader.gd" id="5_cf765"]
+[ext_resource type="Script" uid="uid://cew56n8hm63qg" path="res://scripts/ring.gd" id="6_7a4yq"]
+[ext_resource type="Script" uid="uid://coejdc7tqlu5s" path="res://scripts/arc_2d.gd" id="7_3wyln"]
+[ext_resource type="Script" uid="uid://pqsscp47tjbh" path="res://scripts/rotator_2d.gd" id="8_077fr"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Song" type="Node2D"]
 
 [node name="EventfulAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_rseh7")
-script = ExtResource("2_xs2qq")
-tempo = 140.0
-events_string = "-1:0:activate:ring1
--1:0:print:ok
-0:4:pin:ring1:1
-2:4:pin:ring2:0.25
-4:4:indicator:ring1:0
-6:4:indicator:ring1:-0.25"
+script = ExtResource("2_2luy8")
 metadata/_custom_type_script = "uid://co6wy5tg0krb"
 
 [node name="Timer" type="Timer" parent="EventfulAudioStreamPlayer"]
@@ -31,7 +22,7 @@ autostart = true
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="UIRotator" type="Node2D" parent="."]
-script = ExtResource("3_jvgl7")
+script = ExtResource("3_x0nux")
 metadata/_custom_type_script = "uid://pqsscp47tjbh"
 
 [node name="Label" type="Label" parent="UIRotator"]
@@ -40,19 +31,19 @@ offset_top = -159.0
 offset_right = 45.0
 offset_bottom = -102.0
 text = "Score"
-script = ExtResource("4_fbwxh")
+script = ExtResource("4_d6eh3")
 
 [node name="Ringleader" type="Node2D" parent="."]
-script = ExtResource("5_havgd")
+script = ExtResource("5_cf765")
 ring1_indicator_color = Color(0.551224, 0.100189, 0.848236, 1)
 ring2_indicator_color = Color(1.00957, 0.362, 0.428925, 1)
 
 [node name="Ring1" type="Node2D" parent="Ringleader"]
-script = ExtResource("6_qtq32")
+script = ExtResource("6_7a4yq")
 metadata/_custom_type_script = "uid://pqsscp47tjbh"
 
 [node name="Arc2D" type="Node2D" parent="Ringleader/Ring1"]
-script = ExtResource("7_cvfru")
+script = ExtResource("7_3wyln")
 radius = 95.0
 width = 25.0
 length = 0.9
@@ -60,11 +51,11 @@ offset = 0.25
 color = Color(0.842743, 0.363159, 0.929794, 1)
 
 [node name="Ring2" type="Node2D" parent="Ringleader/Ring1"]
-script = ExtResource("8_ddgu7")
+script = ExtResource("8_077fr")
 metadata/_custom_type_script = "uid://pqsscp47tjbh"
 
 [node name="Arc2D" type="Node2D" parent="Ringleader/Ring1/Ring2"]
-script = ExtResource("7_cvfru")
+script = ExtResource("7_3wyln")
 width = 20.0
 length = 0.85
 offset = 0.25

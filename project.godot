@@ -46,10 +46,15 @@ project/breakpoints={
 "res://scripts/rotation_input.gd": PackedInt32Array()
 }
 project/editorState=[{
-"column": 26,
-"current": true,
+"column": 0,
 "line": 5,
 "path": "res://scripts/input_mode_button.gd",
+"type": "file"
+}, {
+"column": 0,
+"current": true,
+"line": 0,
+"path": "res://scripts/eventful_audio_stream_player.gd",
 "type": "file"
 }]
 project/xogot_game_id="834_xogot-jam"
