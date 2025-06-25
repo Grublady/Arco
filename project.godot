@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Xogot Jam"
-run/main_scene="res://scenes/menu.tscn"
+run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.4", "Mobile")
 run/max_fps="240"
 config/icon="res://icon.svg"
@@ -27,6 +27,8 @@ RotationInput="*res://scripts/rotation_input.gd"
 
 [display]
 
+window/size/viewport_width=640
+window/size/viewport_height=640
 window/stretch/mode="canvas_items"
 window/vsync/vsync_mode="disabled"
 
@@ -43,6 +45,7 @@ renderer/rendering_method="mobile"
 project/breakpoints={
 "res://menu.tscn::GDScript_vsb4k": PackedInt32Array(),
 "res://scripts/eventful_audio_stream_player.gd": PackedInt32Array(),
+"res://scripts/main_menu.gd": PackedInt32Array(),
 "res://scripts/rotation_input.gd": PackedInt32Array()
 }
 project/editorState=[{
@@ -52,9 +55,71 @@ project/editorState=[{
 "type": "file"
 }, {
 "column": 0,
-"current": true,
 "line": 0,
 "path": "res://scripts/eventful_audio_stream_player.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 0,
+"path": "res://scripts/rotator_2d.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 11,
+"path": "res://scripts/ui_rotator.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 13,
+"path": "res://scripts/menu.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 37,
+"path": "res://scripts/arc_2d.gd",
+"type": "file"
+}, {
+"title": "CanvasItem",
+"type": "doc"
+}, {
+"column": 0,
+"current": true,
+"line": 9,
+"path": "res://scripts/menu_option.gd",
+"type": "file"
+}, {
+"title": "FontVariation",
+"type": "doc"
+}, {
+"title": "Transform2D",
+"type": "doc"
+}, {
+"column": 0,
+"line": 15,
+"path": "res://scripts/web_permissions_button.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 0,
+"path": "res://scripts/indicator.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 0,
+"path": "res://scripts/rotation_input.gd",
+"type": "file"
+}, {
+"title": "Theme",
+"type": "doc"
+}, {
+"column": 0,
+"line": 27,
+"path": "res://scripts/main_menu.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 6,
+"path": "res://scripts/input_mode_sensors_button.gd",
 "type": "file"
 }]
 project/xogot_game_id="834_xogot-jam"

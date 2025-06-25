@@ -1,0 +1,6 @@
+[gd_resource type="SystemFont" format=3 uid="uid://7tbqh57wvo12"]
+
+[resource]
+font_names = PackedStringArray("Verdana")
+subpixel_positioning = 3
+oversampling = 2.0

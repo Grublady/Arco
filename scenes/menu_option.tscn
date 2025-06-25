@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://ia87tskeu176"]
+
+[ext_resource type="Script" uid="uid://cnha4jy7g215c" path="res://scripts/menu_option.gd" id="1_sr4kn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sr4kn"]
+bg_color = Color(0.376205, 0.261581, 0.437866, 0.745778)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[node name="MenuOption" type="Label"]
+offset_right = 200.0
+offset_bottom = 60.0
+pivot_offset = Vector2(100, 30)
+text = "Option"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+script = ExtResource("1_sr4kn")
+
+[node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sr4kn")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2lda7y3amp8s"]
 
 [ext_resource type="PackedScene" uid="uid://cnucdprcvp5kp" path="res://scenes/song.tscn" id="1_tbble"]
-[ext_resource type="AudioStream" uid="uid://byi2bq8xvpe2x" path="res://xogot_jam_jam.ogg" id="2_bspd6"]
+[ext_resource type="AudioStream" uid="uid://byi2bq8xvpe2x" path="res://audio/xogot_jam_jam.ogg" id="2_bspd6"]
 
 [node name="XogotJamJam" instance=ExtResource("1_tbble")]
 

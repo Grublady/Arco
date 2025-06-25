@@ -1,62 +1,75 @@
-[gd_scene load_steps=4 format=3 uid="uid://10dgd71jxakk"]
+[gd_scene load_steps=7 format=3 uid="uid://coxk2abimqhsr"]
 
-[ext_resource type="Script" uid="uid://crjiesa17t7dc" path="res://scripts/web_permissions_button.gd" id="1_lti8b"]
-[ext_resource type="Script" uid="uid://cxln43a233oir" path="res://scripts/input_mode_button.gd" id="2_vjb58"]
+[ext_resource type="Script" uid="uid://syal5715husq" path="res://scripts/menu.gd" id="1_l48gv"]
+[ext_resource type="PackedScene" uid="uid://dxkh8w2ds2brx" path="res://scenes/background.tscn" id="1_mae5d"]
+[ext_resource type="Script" uid="uid://pqsscp47tjbh" path="res://scripts/rotator_2d.gd" id="1_ouk20"]
+[ext_resource type="Script" uid="uid://428mtpgw1rlv" path="res://scripts/ui_rotator.gd" id="2_4hy44"]
+[ext_resource type="Script" uid="uid://coejdc7tqlu5s" path="res://scripts/arc_2d.gd" id="3_mae5d"]
+[ext_resource type="PackedScene" uid="uid://ia87tskeu176" path="res://scenes/menu_option.tscn" id="6_g3eks"]
 
-[sub_resource type="GDScript" id="GDScript_vsb4k"]
-script/source = "extends Button
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_l48gv")
 
-func _pressed() -> void:
-	get_tree().change_scene_to_file(\"res://scenes/songs/xogot_jam_jam.tscn\")"
+[node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Menu" type="Control"]
+[node name="Background" parent="." instance=ExtResource("1_mae5d")]
+
+[node name="UIRotator" type="Node2D" parent="."]
+script = ExtResource("2_4hy44")
+rotating = false
+auto_offset_enabled = false
+metadata/_custom_type_script = "uid://pqsscp47tjbh"
+
+[node name="Control" type="Control" parent="UIRotator"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -240.0
+offset_top = -240.0
+offset_right = 240.0
+offset_bottom = 240.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_right = 24.0
-offset_bottom = 20.0
-text = "Button"
-script = SubResource("GDScript_vsb4k")
+[node name="Label" type="Label" parent="UIRotator/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_right = 120.0
+offset_bottom = 57.0
+grow_horizontal = 2
+text = "Label"
+horizontal_alignment = 1
 
-[node name="Button2" type="Button" parent="."]
-layout_mode = 0
-offset_top = 119.0
-offset_right = 114.0
-offset_bottom = 180.0
-text = "Permissions"
-script = ExtResource("1_lti8b")
+[node name="Rotator2D" type="Node2D" parent="."]
+script = ExtResource("1_ouk20")
+metadata/_custom_type_script = "uid://pqsscp47tjbh"
 
-[node name="SensorsButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = -2.0
-offset_top = 427.0
-offset_right = 112.0
-offset_bottom = 488.0
-text = "Sensors"
-script = ExtResource("2_vjb58")
+[node name="Arc2D" type="Node2D" parent="Rotator2D"]
+script = ExtResource("3_mae5d")
+radius = 80.0
+length = 0.85
+offset = 0.25
+color = Color(0.52272, 0.47023, 1.03392, 1)
+metadata/_custom_type_script = "uid://coejdc7tqlu5s"
 
-[node name="MouseButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 194.0
-offset_top = 430.0
-offset_right = 322.0
-offset_bottom = 491.0
-text = "Mouse"
-script = ExtResource("2_vjb58")
-mode = 1
+[node name="MenuOption" parent="." instance=ExtResource("6_g3eks")]
+offset_left = -304.0
+offset_top = -31.0
+offset_right = -104.0
+offset_bottom = 29.0
 
-[node name="JoystickButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 403.0
-offset_top = 430.0
-offset_right = 531.0
-offset_bottom = 491.0
-text = "Joystick"
-script = ExtResource("2_vjb58")
-mode = 2
+[node name="MenuOption2" parent="." instance=ExtResource("6_g3eks")]
+offset_left = -108.0
+offset_top = -160.0
+offset_right = 92.0
+offset_bottom = -100.0
+
+[node name="MenuOption3" parent="." instance=ExtResource("6_g3eks")]
+offset_left = 74.0
+offset_top = -27.0
+offset_right = 274.0
+offset_bottom = 33.0

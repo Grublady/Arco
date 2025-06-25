@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnucdprcvp5kp"]
+[gd_scene load_steps=10 format=3 uid="uid://cnucdprcvp5kp"]
 
 [ext_resource type="Script" uid="uid://co6wy5tg0krb" path="res://scripts/eventful_audio_stream_player.gd" id="2_2luy8"]
+[ext_resource type="PackedScene" uid="uid://dxkh8w2ds2brx" path="res://scenes/background.tscn" id="2_uvvid"]
 [ext_resource type="Script" uid="uid://428mtpgw1rlv" path="res://scripts/ui_rotator.gd" id="3_x0nux"]
+[ext_resource type="Theme" uid="uid://dgmb2646iktpp" path="res://resources/theme.tres" id="4_6nypw"]
 [ext_resource type="Script" uid="uid://bi7tqer534emi" path="res://scripts/score.gd" id="4_d6eh3"]
 [ext_resource type="Script" uid="uid://dm4f0devlrdfp" path="res://scripts/ringleader.gd" id="5_cf765"]
 [ext_resource type="Script" uid="uid://cew56n8hm63qg" path="res://scripts/ring.gd" id="6_7a4yq"]
@@ -21,11 +23,19 @@ autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
+[node name="Background" parent="." instance=ExtResource("2_uvvid")]
+
 [node name="UIRotator" type="Node2D" parent="."]
 script = ExtResource("3_x0nux")
 metadata/_custom_type_script = "uid://pqsscp47tjbh"
 
-[node name="Label" type="Label" parent="UIRotator"]
+[node name="Control" type="Control" parent="UIRotator"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("4_6nypw")
+
+[node name="Label" type="Label" parent="UIRotator/Control"]
+layout_mode = 0
 offset_left = -44.0
 offset_top = -159.0
 offset_right = 45.0
