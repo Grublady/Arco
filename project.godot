@@ -82,9 +82,9 @@ project/editorState=[{
 "title": "CanvasItem",
 "type": "doc"
 }, {
-"column": 0,
+"column": 15,
 "current": true,
-"line": 9,
+"line": 35,
 "path": "res://scripts/menu_option.gd",
 "type": "file"
 }, {
@@ -113,7 +113,7 @@ project/editorState=[{
 "type": "doc"
 }, {
 "column": 0,
-"line": 27,
+"line": 3,
 "path": "res://scripts/main_menu.gd",
 "type": "file"
 }, {
@@ -121,5 +121,16 @@ project/editorState=[{
 "line": 6,
 "path": "res://scripts/input_mode_sensors_button.gd",
 "type": "file"
+}, {
+"column": 0,
+"line": 11,
+"path": "res://scripts/press_target.gd",
+"type": "file"
+}, {
+"title": "Curve2D",
+"type": "doc"
+}, {
+"title": "Curve",
+"type": "doc"
 }]
 project/xogot_game_id="834_xogot-jam"

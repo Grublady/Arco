@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://boecd0bnfb5bt"]
+[gd_scene load_steps=19 format=3 uid="uid://boecd0bnfb5bt"]
 
 [ext_resource type="Theme" uid="uid://dgmb2646iktpp" path="res://resources/theme.tres" id="1_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://dxkh8w2ds2brx" path="res://scenes/background.tscn" id="1_l6cm7"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://pqsscp47tjbh" path="res://scripts/rotator_2d.gd" id="7_jk1qb"]
 [ext_resource type="Script" uid="uid://coejdc7tqlu5s" path="res://scripts/arc_2d.gd" id="8_5dd4i"]
 [ext_resource type="PackedScene" uid="uid://ia87tskeu176" path="res://scenes/menu_option.tscn" id="9_jk1qb"]
+[ext_resource type="Script" uid="uid://dmy5sma8ng5a1" path="res://scripts/press_target.gd" id="11_lgwnu"]
 
 [sub_resource type="FontVariation" id="FontVariation_wu84c"]
 base_font = ExtResource("3_bqqt6")
@@ -37,6 +38,25 @@ font = SubResource("FontVariation_rtw2f")
 font_size = 32
 outline_size = 4
 outline_color = Color(0.190887, 0.0804901, 0.391968, 1)
+
+[sub_resource type="Gradient" id="Gradient_jk1qb"]
+offsets = PackedFloat32Array(0, 0.6, 1)
+colors = PackedColorArray(0.421112, 0.338394, 0.94931, 1, 0.345734, 0.277802, 0.779495, 0.5, 0.270355, 0.217209, 0.60968, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5dd4i"]
+gradient = SubResource("Gradient_jk1qb")
+width = 80
+height = 80
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Curve" id="Curve_lgwnu"]
+_data = [Vector2(0, 0.5), 0.0, 0.036057, 0, 0, Vector2(0.5, 1), -0.0863273, -0.0863273, 0, 0, Vector2(1, 0.5), 0.225181, 0.0, 0, 0]
+point_count = 3
+metadata/_snap_enabled = true
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -69,7 +89,15 @@ text = "Arco"
 label_settings = SubResource("LabelSettings_8ln24")
 horizontal_alignment = 1
 
-[node name="InputModeLabel" type="Label" parent="."]
+[node name="InputModeSelection" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="InputModeSelection"]
 modulate = Color(0.999985, 1, 1, 0.774403)
 layout_mode = 1
 anchors_preset = 7
@@ -89,7 +117,7 @@ theme_override_font_sizes/font_size = 32
 text = "Select Input Mode"
 label_settings = SubResource("LabelSettings_wu84c")
 
-[node name="InputModeButtons" type="HFlowContainer" parent="."]
+[node name="ButtonContainer" type="HFlowContainer" parent="InputModeSelection"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -105,31 +133,40 @@ theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
 alignment = 1
 
-[node name="SensorsButton" type="Button" parent="InputModeButtons"]
+[node name="SensorsButton" type="Button" parent="InputModeSelection/ButtonContainer"]
 layout_mode = 2
 text = "Device Motion
 (recommended)"
 script = ExtResource("4_8ln24")
 
-[node name="MouseButton" type="Button" parent="InputModeButtons"]
+[node name="MouseButton" type="Button" parent="InputModeSelection/ButtonContainer"]
 layout_mode = 2
 text = "Mouse"
 script = ExtResource("4_wu84c")
 mode = 1
 
-[node name="JoystickButton" type="Button" parent="InputModeButtons"]
+[node name="JoystickButton" type="Button" parent="InputModeSelection/ButtonContainer"]
 layout_mode = 2
 text = "Joystick"
 script = ExtResource("4_wu84c")
 mode = 2
 
-[node name="Rotator2D" type="Node2D" parent="."]
+[node name="Confirmation" type="Control" parent="."]
 visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Rotator2D" type="Node2D" parent="Confirmation"]
 position = Vector2(320, 320)
 script = ExtResource("7_jk1qb")
+auto_offset_enabled = false
 metadata/_custom_type_script = "uid://pqsscp47tjbh"
 
-[node name="Arc2D" type="Node2D" parent="Rotator2D"]
+[node name="Arc2D" type="Node2D" parent="Confirmation/Rotator2D"]
 script = ExtResource("8_5dd4i")
 radius = 80.0
 length = 0.8
@@ -137,8 +174,7 @@ offset = 0.25
 color = Color(0.953934, 0.386551, 0.402924, 1)
 metadata/_custom_type_script = "uid://coejdc7tqlu5s"
 
-[node name="ConfirmOption" parent="." instance=ExtResource("9_jk1qb")]
-visible = false
+[node name="ConfirmOption" parent="Confirmation" instance=ExtResource("9_jk1qb")]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -154,11 +190,22 @@ grow_vertical = 0
 text = "Confirm"
 label_settings = SubResource("LabelSettings_wu84c")
 
-[node name="CancelButton" type="Button" parent="."]
-visible = false
+[node name="CancelButton" type="Button" parent="Confirmation"]
 layout_mode = 0
 offset_left = 38.0
 offset_top = 549.0
 offset_right = 156.0
 offset_bottom = 604.0
 text = "Cancel"
+
+[node name="PressTarget" type="Sprite2D" parent="Confirmation"]
+position = Vector2(320, 320)
+texture = SubResource("GradientTexture2D_5dd4i")
+script = ExtResource("11_lgwnu")
+curve = SubResource("Curve_lgwnu")
+
+[node name="TutorialArrow" type="Line2D" parent="Confirmation"]
+position = Vector2(13, 6)
+points = PackedVector2Array(366, 222, 383.977, 229.626, 399, 236, 419, 262, 428, 287, 427, 311, 424, 339, 409, 309, 422, 352, 441, 323)
+width = 8.0
+default_color = Color(0.350311, 0.28006, 0.786484, 1)

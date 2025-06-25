@@ -1,30 +1,38 @@
 extends Control
 
+@onready var selection_rotator := $Confirmation/Rotator2D
+
 func _ready() -> void:
-	for button in $InputModeButtons.get_children():
+	for button in $InputModeSelection/ButtonContainer.get_children():
 		button.pressed.connect(_on_input_mode_button_pressed)
-	$CancelButton.pressed.connect(_on_cancel_button_pressed)
-	$ConfirmOption.pressed.connect(_on_confirm_option_pressed)
+	$Confirmation/ConfirmOption.pressed.connect(_on_confirm_option_pressed)
+	$Confirmation/CancelButton.pressed.connect(_on_cancel_button_pressed)
+	$Confirmation.process_mode = Node.PROCESS_MODE_DISABLED
 
 func _process(_delta: float) -> void:
-	if absf(angle_difference($Rotator2D.rotation, PI)) < PI/4:
-		$ConfirmOption.active = true
+	if absf(angle_difference(selection_rotator.rotation, PI)) < PI/6:
+		$Confirmation/ConfirmOption.active = true
+		$Confirmation/PressTarget.show()
+		$Confirmation/TutorialArrow.hide()
 	else:
-		$ConfirmOption.active = false
+		$Confirmation/ConfirmOption.active = false
+		$Confirmation/PressTarget.hide()
+		$Confirmation/TutorialArrow.show()
 
 func _on_input_mode_button_pressed() -> void:
-	$InputModeButtons.hide()
-	$InputModeLabel.hide()
-	$Rotator2D.show()
-	$ConfirmOption.show()
-	$CancelButton.show()
+	$InputModeSelection.hide()
+	$InputModeSelection.process_mode = Node.PROCESS_MODE_DISABLED
+	$Confirmation.show()
+	$Confirmation.process_mode = Node.PROCESS_MODE_INHERIT
+	selection_rotator.rotating = true
 
 func _on_cancel_button_pressed() -> void:
-	$InputModeButtons.show()
-	$InputModeLabel.show()
-	$Rotator2D.hide()
-	$ConfirmOption.hide()
-	$CancelButton.hide()
+	$InputModeSelection.show()
+	$InputModeSelection.process_mode = Node.PROCESS_MODE_INHERIT
+	$Confirmation.hide()
+	$Confirmation.process_mode = Node.PROCESS_MODE_DISABLED
+	selection_rotator.rotating = false
+	selection_rotator.rotation = 0
 
 func _on_confirm_option_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/songs/xogot_jam_jam.tscn")

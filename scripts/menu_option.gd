@@ -22,16 +22,15 @@ func _input(event: InputEvent) -> void:
 	if not event.is_pressed():
 		return
 	
-	if (
-		event is InputEventScreenTouch
-		or event is InputEventMouseButton
-		or event is InputEventJoypadButton
-	):
+	if event is InputEventJoypadButton:
 		pressed.emit()
+	elif event is InputEventMouseButton or event is InputEventScreenTouch:
+		if (event.position - get_viewport_rect().size/2).length_squared() <= 80**2:
+			pressed.emit()
 
 func _set_active(new_value: bool) -> void:
 	active = new_value
 	if active:
-		$Panel.modulate = Color.WHITE
+		$Panel.show()
 	else:
-		$Panel.modulate = Color(0.5, 0.5, 0.5)
+		$Panel.hide()
