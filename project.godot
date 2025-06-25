@@ -55,7 +55,8 @@ project/editorState=[{
 "type": "file"
 }, {
 "column": 0,
-"line": 0,
+"current": true,
+"line": 59,
 "path": "res://scripts/eventful_audio_stream_player.gd",
 "type": "file"
 }, {
@@ -82,8 +83,7 @@ project/editorState=[{
 "title": "CanvasItem",
 "type": "doc"
 }, {
-"column": 15,
-"current": true,
+"column": 0,
 "line": 35,
 "path": "res://scripts/menu_option.gd",
 "type": "file"

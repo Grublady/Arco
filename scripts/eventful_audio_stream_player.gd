@@ -1,6 +1,7 @@
 class_name EventfulAudioStreamPlayer extends AudioStreamPlayer
 
 @export var custom_latency: float = 0
+@export var custom_start: float = 0
 @export var tempo: float = 120
 
 var _current_id: int = 0
@@ -51,7 +52,15 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if not playing:
 		return
+	
 	var time := get_playback_position()
+	
+	var custom_start_time := custom_start * 60 / tempo
+	if time < custom_start_time:
+		play(custom_start_time)
+		time = custom_start_time
+		_previous_time = custom_start_time
+	
 	time += AudioServer.get_time_since_last_mix()
 	time -= _output_latency
 	time -= custom_latency
