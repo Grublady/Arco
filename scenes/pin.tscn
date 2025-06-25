@@ -4,6 +4,8 @@
 
 [node name="Pin" type="Node2D"]
 script = ExtResource("1_p1640")
+color_ring1 = Color(1.05606, -0.195236, 1.03416, 1)
+color_ring2 = Color(1.07359, 0.468414, -0.126495, 1)
 radius = 300.0
 width = 40.0
 length = 0.01

@@ -33,7 +33,7 @@ func _on_audio_event(event: EventBus.AudioEvent) -> void:
 					check(event.data[0], float(event.data[1]))
 				"pin":
 					if is_instance_valid(_active_pin):
-						_active_pin.queue_free()
+						_active_pin.destroy()
 					_active_pin = _pins[event.id]
 					_pins.erase(event.id)
 					
@@ -65,14 +65,14 @@ func activate_ring(ring_name: String) -> void:
 
 func create_indicator(source_scene: PackedScene, ring_name: String, event_rotation: float, event_duration: float) -> Node:
 	var new_indicator := source_scene.instantiate()
-	new_indicator.radius = 300
+	new_indicator.radius = 320
 	match ring_name:
 		"ring1":
 			new_indicator.target_radius = ring1_arc.radius + ring1_arc.width / 4
-			new_indicator.color = ring1_indicator_color
+			new_indicator.color = new_indicator.color_ring1
 		"ring2":
 			new_indicator.target_radius = ring2_arc.radius + ring2_arc.width / 4
-			new_indicator.color = ring2_indicator_color
+			new_indicator.color = new_indicator.color_ring2
 	new_indicator.rotation = TAU * event_rotation
 	new_indicator.tween_time = event_duration
 	add_child(new_indicator)

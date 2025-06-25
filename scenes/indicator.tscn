@@ -5,6 +5,8 @@
 [node name="Indicator" type="Node2D"]
 script = ExtResource("1_y2dtm")
 target_radius = 50.0
+color_ring1 = Color(0.551392, 0.100174, 0.847198, 1)
+color_ring2 = Color(1.01143, 0.362244, 0.428238, 1)
 radius = 200.0
 length = 0.08
 color = Color(0.255234, 0.548691, 1.03285, 1)

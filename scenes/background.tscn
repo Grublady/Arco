@@ -1,12 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://dxkh8w2ds2brx"]
 
-[sub_resource type="Gradient" id="Gradient_lfdfa"]
-offsets = PackedFloat32Array(0, 0.8, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0.5, 0.5, 0.5, 1, 0, 0, 0, 1)
+[sub_resource type="Gradient" id="Gradient_o5a4c"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.4, 0.7, 1)
+colors = PackedColorArray(1.01491, 0.926697, 0.905411, 1, 0.679733, 0.620377, 0.758972, 1, 0.491196, 0.404861, 0.496231, 1, 0, 0, 0, 1)
 metadata/_snap_enabled = true
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_jqnnl"]
-gradient = SubResource("Gradient_lfdfa")
+gradient = SubResource("Gradient_o5a4c")
 width = 1280
 height = 1280
 fill = 1

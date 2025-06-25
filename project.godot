@@ -55,7 +55,6 @@ project/editorState=[{
 "type": "file"
 }, {
 "column": 0,
-"current": true,
 "line": 59,
 "path": "res://scripts/eventful_audio_stream_player.gd",
 "type": "file"
@@ -100,7 +99,7 @@ project/editorState=[{
 "type": "file"
 }, {
 "column": 0,
-"line": 0,
+"line": 7,
 "path": "res://scripts/indicator.gd",
 "type": "file"
 }, {
@@ -132,5 +131,16 @@ project/editorState=[{
 }, {
 "title": "Curve",
 "type": "doc"
+}, {
+"column": 0,
+"current": true,
+"line": 35,
+"path": "res://scripts/ringleader.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 20,
+"path": "res://scripts/pin.gd",
+"type": "file"
 }]
 project/xogot_game_id="834_xogot-jam"
