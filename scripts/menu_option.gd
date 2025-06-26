@@ -31,6 +31,8 @@ func _input(event: InputEvent) -> void:
 func _set_active(new_value: bool) -> void:
 	active = new_value
 	if active:
+		self_modulate = Color(1, 1, 1, 0.5)
 		$Panel.show()
 	else:
+		self_modulate = Color(0.5, 0.5, 0.5, 1)
 		$Panel.hide()

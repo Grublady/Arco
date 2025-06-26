@@ -207,6 +207,7 @@ offset_bottom = 604.0
 text = "Cancel"
 
 [node name="PressTarget" type="Sprite2D" parent="Confirmation"]
+modulate = Color(0.723724, 1.00777, 1.00363, 1)
 position = Vector2(320, 320)
 texture = SubResource("GradientTexture2D_5dd4i")
 script = ExtResource("11_lgwnu")

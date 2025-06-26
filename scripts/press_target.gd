@@ -9,4 +9,5 @@ func _process(delta: float) -> void:
 	progress += delta
 	progress = fmod(progress, time)
 	var sample := curve.sample_baked(progress / time)
-	scale = Vector2(sample, sample)
+	scale = Vector2(sample, sample) * 1.2
+	modulate.h = sample

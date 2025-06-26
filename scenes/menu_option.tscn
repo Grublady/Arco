@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://cnha4jy7g215c" path="res://scripts/menu_option.gd" id="1_sr4kn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sr4kn"]
-bg_color = Color(0.673996, 0.46875, 0.784637, 0.79991)
+bg_color = Color(0.673981, 0.46875, 0.784607, 0.101804)
+border_width_bottom = 12
+border_color = Color(0.44046, 0.368591, 0.90181, 0.604772)
+border_blend = true
 corner_radius_top_left = 24
 corner_radius_top_right = 24
 corner_radius_bottom_right = 24
@@ -20,7 +23,6 @@ clip_text = true
 script = ExtResource("1_sr4kn")
 
 [node name="Panel" type="Panel" parent="."]
-visible = false
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15

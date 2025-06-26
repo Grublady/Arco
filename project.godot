@@ -84,8 +84,9 @@ project/editorState=[{
 "title": "CanvasItem",
 "type": "doc"
 }, {
-"column": 0,
-"line": 35,
+"column": 15,
+"current": true,
+"line": 37,
 "path": "res://scripts/menu_option.gd",
 "type": "file"
 }, {
@@ -113,8 +114,7 @@ project/editorState=[{
 "title": "Theme",
 "type": "doc"
 }, {
-"column": 35,
-"current": true,
+"column": 0,
 "line": 55,
 "path": "res://scripts/main_menu.gd",
 "type": "file"
@@ -125,7 +125,7 @@ project/editorState=[{
 "type": "file"
 }, {
 "column": 0,
-"line": 11,
+"line": 13,
 "path": "res://scripts/press_target.gd",
 "type": "file"
 }, {
@@ -180,7 +180,7 @@ project/editorState=[{
 "type": "doc"
 }, {
 "column": 0,
-"line": 15,
+"line": 26,
 "path": "res://scripts/latency_check.gd",
 "type": "file"
 }, {
