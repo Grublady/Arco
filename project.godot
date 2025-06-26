@@ -113,9 +113,9 @@ project/editorState=[{
 "title": "Theme",
 "type": "doc"
 }, {
-"column": 0,
+"column": 92,
 "current": true,
-"line": 26,
+"line": 16,
 "path": "res://scripts/main_menu.gd",
 "type": "file"
 }, {

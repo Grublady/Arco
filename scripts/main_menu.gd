@@ -14,6 +14,7 @@ func show_input_confirmation() -> void:
 	$Confirmation.show()
 	$Confirmation.process_mode = Node.PROCESS_MODE_INHERIT
 	selection_rotator.rotating = true
+	$Confirmation/RotationLockLabel.visible = (RotationInput.mode == RotationInput.Mode.sensor)
 func hide_input_confirmation() -> void:
 	$Confirmation.hide()
 	$Confirmation.process_mode = Node.PROCESS_MODE_DISABLED

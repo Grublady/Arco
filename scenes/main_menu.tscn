@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://boecd0bnfb5bt"]
+[gd_scene load_steps=25 format=3 uid="uid://boecd0bnfb5bt"]
 
 [ext_resource type="Theme" uid="uid://dgmb2646iktpp" path="res://resources/theme.tres" id="1_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://dxkh8w2ds2brx" path="res://scenes/background.tscn" id="1_l6cm7"]
@@ -62,6 +62,8 @@ metadata/_snap_enabled = true
 _data = [Vector2(0, 0.5), 0.0, 0.036057, 0, 0, Vector2(0.5, 1), -0.0863273, -0.0863273, 0, 0, Vector2(1, 0.5), 0.225181, 0.0, 0, 0]
 point_count = 3
 metadata/_snap_enabled = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_7b55j"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -214,6 +216,16 @@ position = Vector2(13, 6)
 points = PackedVector2Array(366, 222, 383.977, 229.626, 399, 236, 419, 262, 428, 287, 427, 311, 424, 339, 409, 309, 422, 352, 441, 323)
 width = 8.0
 default_color = Color(0.350311, 0.28006, 0.786484, 1)
+
+[node name="RotationLockLabel" type="Label" parent="Confirmation"]
+visible = false
+layout_mode = 0
+offset_left = 359.0
+offset_top = 567.0
+offset_right = 609.0
+offset_bottom = 603.0
+text = "Rotation Lock Recommended"
+label_settings = SubResource("LabelSettings_7b55j")
 
 [node name="LatencyCheck" type="Control" parent="."]
 visible = false
