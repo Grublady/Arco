@@ -113,8 +113,9 @@ project/editorState=[{
 "title": "Theme",
 "type": "doc"
 }, {
-"column": 0,
-"line": 35,
+"column": 71,
+"current": true,
+"line": 10,
 "path": "res://scripts/main_menu.gd",
 "type": "file"
 }, {
@@ -178,9 +179,8 @@ project/editorState=[{
 "title": "AudioStreamWAV",
 "type": "doc"
 }, {
-"column": 23,
-"current": true,
-"line": 6,
+"column": 0,
+"line": 15,
 "path": "res://scripts/latency_check.gd",
 "type": "file"
 }, {

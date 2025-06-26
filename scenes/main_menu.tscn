@@ -95,7 +95,6 @@ label_settings = SubResource("LabelSettings_8ln24")
 horizontal_alignment = 1
 
 [node name="InputModeSelection" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -217,6 +216,7 @@ width = 8.0
 default_color = Color(0.350311, 0.28006, 0.786484, 1)
 
 [node name="LatencyCheck" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -325,4 +325,11 @@ offset_right = 95.0
 offset_bottom = -120.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Set Latency"
+text = "Confirm Latency"
+
+[node name="CancelButton" type="Button" parent="LatencyCheck"]
+offset_left = 38.0
+offset_top = 549.0
+offset_right = 156.0
+offset_bottom = 604.0
+text = "Cancel"

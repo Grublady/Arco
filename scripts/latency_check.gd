@@ -1,5 +1,13 @@
 extends Control
 
+func start() -> void:
+	show()
+	$EventfulAudioStreamPlayer.play()
+
+func end() -> void:
+	hide()
+	$EventfulAudioStreamPlayer.stop()
+
 func _ready() -> void:
 	EventBus.audio_event.connect(_on_audio_event)
 	$SpinBox.value_changed.connect(_on_value_changed)
