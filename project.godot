@@ -84,8 +84,7 @@ project/editorState=[{
 "title": "CanvasItem",
 "type": "doc"
 }, {
-"column": 15,
-"current": true,
+"column": 0,
 "line": 37,
 "path": "res://scripts/menu_option.gd",
 "type": "file"
@@ -106,8 +105,9 @@ project/editorState=[{
 "path": "res://scripts/indicator.gd",
 "type": "file"
 }, {
-"column": 0,
-"line": 0,
+"column": 34,
+"current": true,
+"line": 81,
 "path": "res://scripts/rotation_input.gd",
 "type": "file"
 }, {
@@ -119,8 +119,8 @@ project/editorState=[{
 "path": "res://scripts/main_menu.gd",
 "type": "file"
 }, {
-"column": 0,
-"line": 6,
+"column": 33,
+"line": 4,
 "path": "res://scripts/input_mode_sensors_button.gd",
 "type": "file"
 }, {

@@ -283,7 +283,6 @@ custom_arrow_step = 4.0
 
 [node name="EventfulAudioStreamPlayer" type="AudioStreamPlayer" parent="LatencyCheck"]
 stream = ExtResource("11_flqon")
-autoplay = true
 script = ExtResource("12_flqon")
 events_string = "0:0:test
 2:0:test

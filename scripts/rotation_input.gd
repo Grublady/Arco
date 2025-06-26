@@ -1,6 +1,6 @@
 extends Node
 
-var calibration := PI
+var calibration: float = 0
 var mode := Mode.sensor
 var rotation: float = 0
 
@@ -11,6 +11,13 @@ enum Mode {
 	mouse,
 	joystick
 }
+
+func calibrate() -> void:
+	_process(0)
+	var turn_angle := PI / 2
+	var raw_rotation := rotation - calibration
+	var turns := roundf(raw_rotation / turn_angle)
+	calibration = turns * turn_angle * -1
 
 func _ready() -> void:
 	if OS.has_feature("web"):
@@ -38,7 +45,7 @@ func get_rotation() -> float:
 func _update_from_sensors() -> void:
 	var device_gravity: Vector3 = Input.get_gravity()
 	var gravity_2d := Vector2(device_gravity.x, device_gravity.y)
-	rotation = -gravity_2d.angle() - PI/2
+	rotation = -gravity_2d.angle() + calibration
 
 func _update_from_sensors_web() -> void:
 	var beta: float = WebSensors.get_orientation().x
@@ -57,13 +64,13 @@ func _update_from_sensors_web() -> void:
 	
 	var screen_rotation: float = WebSensors.get_screen_orientation_angle()
 	
-	rotation = calibration + screen_rotation - angle
+	rotation = screen_rotation - angle + calibration
 
 func _update_from_mouse() -> void:
 	var mouse_pos := get_viewport().get_mouse_position()
 	var center := get_viewport().get_visible_rect().size / 2
 	var direction := mouse_pos - center
-	rotation = direction.angle() + PI/2
+	rotation = direction.angle() + PI / 2
 
 func _update_from_joystick() -> void:
 	var new_joystick := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
