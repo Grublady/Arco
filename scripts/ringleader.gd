@@ -19,26 +19,27 @@ func _ready() -> void:
 	EventBus.audio_event.connect(_on_audio_event)
 
 func _on_audio_event(event: EventBus.AudioEvent) -> void:
-	match event.data.pop_front():
+	var data := event.data.duplicate()
+	match data.pop_front():
 		"activate":
-			activate_ring(event.data[0])
+			activate_ring(data[0])
 		"indicator":
-			create_indicator(indicator_scene, event.data[0], float(event.data[1]), event.duration)
+			create_indicator(indicator_scene, data[0], float(data[1]), event.duration)
 		"pin":
-			var new_pin := create_indicator(pin_scene, event.data[0], float(event.data[1]), event.duration)
+			var new_pin := create_indicator(pin_scene, data[0], float(data[1]), event.duration)
 			_pins[event.id] = new_pin
 		"end":
-			match event.data.pop_front():
+			match data.pop_front():
 				"indicator":
-					check(event.data[0], float(event.data[1]))
+					check(data[0], float(data[1]))
 				"pin":
 					if is_instance_valid(_active_pin):
 						_active_pin.destroy()
 					_active_pin = _pins[event.id]
 					_pins.erase(event.id)
 					
-					check(event.data[0], float(event.data[1]))
-					match event.data.pop_front():
+					check(data[0], float(data[1]))
+					match data.pop_front():
 						"ring1":
 							activate_ring("ring2")
 							_active_pin.reparent(ring1)
@@ -46,7 +47,7 @@ func _on_audio_event(event: EventBus.AudioEvent) -> void:
 							activate_ring("ring1")
 							_active_pin.reparent(ring2)
 		"print":
-			print(event.data[0])
+			print(data[0])
 		_:
 			return
 

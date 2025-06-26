@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://cnucdprcvp5kp"]
+[gd_scene load_steps=14 format=3 uid="uid://cnucdprcvp5kp"]
 
+[ext_resource type="Script" uid="uid://bgpt06ivgcbx8" path="res://scripts/song.gd" id="1_xckow"]
 [ext_resource type="Script" uid="uid://co6wy5tg0krb" path="res://scripts/eventful_audio_stream_player.gd" id="2_2luy8"]
 [ext_resource type="PackedScene" uid="uid://dxkh8w2ds2brx" path="res://scenes/background.tscn" id="2_uvvid"]
 [ext_resource type="Script" uid="uid://428mtpgw1rlv" path="res://scripts/ui_rotator.gd" id="3_x0nux"]
@@ -14,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://beejdpctmcsd4" path="res://audio/clapper.wav" id="11_xx4ec"]
 
 [node name="Song" type="Node2D"]
+script = ExtResource("1_xckow")
 
 [node name="EventfulAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 script = ExtResource("2_2luy8")

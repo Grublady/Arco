@@ -61,6 +61,10 @@ func _process(_delta: float) -> void:
 		time = custom_start_time
 		_previous_time = custom_start_time
 	
+	if time < _previous_time - 1:
+		# loop detection hack
+		_previous_time = 0
+	
 	time += AudioServer.get_time_since_last_mix()
 	time -= _output_latency
 	time -= custom_latency
