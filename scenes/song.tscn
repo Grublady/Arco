@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cnucdprcvp5kp"]
+[gd_scene load_steps=11 format=3 uid="uid://cnucdprcvp5kp"]
 
 [ext_resource type="Script" uid="uid://co6wy5tg0krb" path="res://scripts/eventful_audio_stream_player.gd" id="2_2luy8"]
 [ext_resource type="PackedScene" uid="uid://dxkh8w2ds2brx" path="res://scenes/background.tscn" id="2_uvvid"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://cew56n8hm63qg" path="res://scripts/ring.gd" id="6_7a4yq"]
 [ext_resource type="Script" uid="uid://coejdc7tqlu5s" path="res://scripts/arc_2d.gd" id="7_3wyln"]
 [ext_resource type="Script" uid="uid://pqsscp47tjbh" path="res://scripts/rotator_2d.gd" id="8_077fr"]
+[ext_resource type="Script" uid="uid://cqa35ktcxmrxu" path="res://scripts/check_particles_generator.gd" id="10_6qxjb"]
 
 [node name="Song" type="Node2D"]
 
@@ -70,5 +71,8 @@ width = 20.0
 length = 0.85
 offset = 0.25
 color = Color(1.06116, 0.609116, 0.532013, 1)
+
+[node name="CheckParticlesGenerator" type="Node2D" parent="."]
+script = ExtResource("10_6qxjb")
 
 [connection signal="timeout" from="EventfulAudioStreamPlayer/Timer" to="EventfulAudioStreamPlayer" method="play"]

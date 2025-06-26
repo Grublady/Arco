@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://cs6g2cemd8qo4"]
+
+[sub_resource type="Gradient" id="Gradient_kttfg"]
+colors = PackedColorArray(1, 1, 1, 1, 0.999985, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6cc5e"]
+gradient = SubResource("Gradient_kttfg")
+width = 8
+height = 8
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Curve" id="Curve_upbeg"]
+_data = [Vector2(0.803965, 1), 99864.4, 0.0, 1, 0, Vector2(0.99999, 0), 0.0, 99864.4, 0, 1]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_n6qmk"]
+texture_mode = 1
+curve = SubResource("Curve_upbeg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6cc5e"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(16, 4, 1)
+direction = Vector3(0, -1, 0)
+spread = 60.0
+initial_velocity_min = 60.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 98, 0)
+tangential_accel_min = -10.0
+tangential_accel_max = 10.0
+alpha_curve = SubResource("CurveTexture_n6qmk")
+
+[node name="CheckHitParticles" type="GPUParticles2D"]
+emitting = false
+texture = SubResource("GradientTexture2D_6cc5e")
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 15
+process_material = SubResource("ParticleProcessMaterial_6cc5e")

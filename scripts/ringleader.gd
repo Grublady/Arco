@@ -92,6 +92,6 @@ func check(ring_name: String, target_rotation: float) -> void:
 	var difference := angle_difference(target_rotation * TAU, current_rotation)
 	var success := (absf(difference) <= PI * check_hit_range)
 	
-	var event_position := to_global(position + Vector2.UP.rotated(target_rotation) * location_radius)
+	var event_position := to_global(position + Vector2.UP.rotated(target_rotation * TAU) * location_radius)
 	
 	EventBus.check_event.emit(success, event_position, current_rotation)
