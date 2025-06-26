@@ -74,5 +74,9 @@ color = Color(1.06116, 0.609116, 0.532013, 1)
 
 [node name="CheckParticlesGenerator" type="Node2D" parent="."]
 script = ExtResource("10_6qxjb")
+particle_kinds = {
+"ring1": Color(1.02669, 0.86171, 1.00941, 1),
+"ring2": Color(0.938507, 1.00201, 0.655426, 1)
+}
 
 [connection signal="timeout" from="EventfulAudioStreamPlayer/Timer" to="EventfulAudioStreamPlayer" method="play"]

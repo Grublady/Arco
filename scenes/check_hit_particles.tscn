@@ -13,14 +13,14 @@ fill_to = Vector2(0.5, 0)
 metadata/_snap_enabled = true
 
 [sub_resource type="Curve" id="Curve_upbeg"]
-_data = [Vector2(0.803965, 1), 99864.4, 0.0, 1, 0, Vector2(0.99999, 0), 0.0, 99864.4, 0, 1]
-point_count = 2
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.495595, 0.701568), -0.60217, 0.0, 1, 0, Vector2(0.99999, 0), 0.0, 99864.4, 0, 1]
+point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_n6qmk"]
 texture_mode = 1
 curve = SubResource("Curve_upbeg")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6cc5e"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4ulm6"]
 particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(16, 4, 1)
@@ -31,12 +31,15 @@ initial_velocity_max = 100.0
 gravity = Vector3(0, 98, 0)
 tangential_accel_min = -10.0
 tangential_accel_max = 10.0
+scale_min = 0.5
+scale_max = 0.5
 alpha_curve = SubResource("CurveTexture_n6qmk")
 
 [node name="CheckHitParticles" type="GPUParticles2D"]
 emitting = false
 texture = SubResource("GradientTexture2D_6cc5e")
+lifetime = 0.7
 one_shot = true
 explosiveness = 1.0
 fixed_fps = 15
-process_material = SubResource("ParticleProcessMaterial_6cc5e")
+process_material = SubResource("ParticleProcessMaterial_4ulm6")

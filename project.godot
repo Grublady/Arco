@@ -133,9 +133,8 @@ project/editorState=[{
 "title": "Curve",
 "type": "doc"
 }, {
-"column": 104,
-"current": true,
-"line": 94,
+"column": 80,
+"line": 96,
 "path": "res://scripts/ringleader.gd",
 "type": "file"
 }, {
@@ -144,18 +143,19 @@ project/editorState=[{
 "path": "res://scripts/pin.gd",
 "type": "file"
 }, {
-"column": 0,
-"line": 11,
+"column": 37,
+"line": 13,
 "path": "res://scripts/score.gd",
 "type": "file"
 }, {
-"column": 0,
-"line": 13,
+"column": 30,
+"current": true,
+"line": 20,
 "path": "res://scripts/check_particles_generator.gd",
 "type": "file"
 }, {
-"column": 0,
-"line": 0,
+"column": 51,
+"line": 12,
 "path": "res://scripts/event_bus.gd",
 "type": "file"
 }]

@@ -94,4 +94,4 @@ func check(ring_name: String, target_rotation: float) -> void:
 	
 	var event_position := to_global(position + Vector2.UP.rotated(target_rotation * TAU) * location_radius)
 	
-	EventBus.check_event.emit(success, event_position, current_rotation)
+	EventBus.check_event.emit(success, event_position, current_rotation, ring_name)
