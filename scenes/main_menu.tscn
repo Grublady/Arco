@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://boecd0bnfb5bt"]
+[gd_scene load_steps=20 format=3 uid="uid://boecd0bnfb5bt"]
 
 [ext_resource type="Theme" uid="uid://dgmb2646iktpp" path="res://resources/theme.tres" id="1_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://dxkh8w2ds2brx" path="res://scenes/background.tscn" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://cyuhg5yloxrdu" path="res://scripts/main_menu.gd" id="2_tbmy8"]
 [ext_resource type="SystemFont" uid="uid://7tbqh57wvo12" path="res://resources/base_font.tres" id="3_bqqt6"]
+[ext_resource type="PackedScene" uid="uid://cs6g2cemd8qo4" path="res://scenes/check_hit_particles.tscn" id="3_lgwnu"]
 [ext_resource type="Script" uid="uid://ygtrimm8jn2r" path="res://scripts/input_mode_sensors_button.gd" id="4_8ln24"]
 [ext_resource type="Script" uid="uid://cxln43a233oir" path="res://scripts/input_mode_button.gd" id="4_wu84c"]
 [ext_resource type="Script" uid="uid://pqsscp47tjbh" path="res://scripts/rotator_2d.gd" id="7_jk1qb"]
@@ -67,6 +68,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_bqqt6")
 script = ExtResource("2_tbmy8")
+
+[node name="CheckHitParticlesPreloader" parent="." instance=ExtResource("3_lgwnu")]
+modulate = Color(0.999985, 1, 1, 0)
+position = Vector2(320, 320)
 
 [node name="Background" parent="." instance=ExtResource("1_l6cm7")]
 position = Vector2(320, 320)
@@ -209,3 +214,6 @@ position = Vector2(13, 6)
 points = PackedVector2Array(366, 222, 383.977, 229.626, 399, 236, 419, 262, 428, 287, 427, 311, 424, 339, 409, 309, 422, 352, 441, 323)
 width = 8.0
 default_color = Color(0.350311, 0.28006, 0.786484, 1)
+
+[connection signal="finished" from="CheckHitParticlesPreloader" to="CheckHitParticlesPreloader" method="queue_free"]
+[connection signal="ready" from="CheckHitParticlesPreloader" to="CheckHitParticlesPreloader" method="set_emitting" binds= [true]]

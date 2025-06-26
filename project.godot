@@ -148,8 +148,9 @@ project/editorState=[{
 "path": "res://scripts/score.gd",
 "type": "file"
 }, {
-"column": 1,
-"line": 12,
+"column": 0,
+"current": true,
+"line": 5,
 "path": "res://scripts/check_particles_generator.gd",
 "type": "file"
 }, {
@@ -159,7 +160,6 @@ project/editorState=[{
 "type": "file"
 }, {
 "column": 8,
-"current": true,
 "line": 7,
 "path": "res://scripts/check_hit_sfx.gd",
 "type": "file"
