@@ -14,7 +14,7 @@ config/name="Xogot Jam"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.4", "Mobile")
 run/max_fps="240"
-config/icon="res://icon.svg"
+config/icon="res://images/icon.svg"
 
 [audio]
 
@@ -113,9 +113,9 @@ project/editorState=[{
 "title": "Theme",
 "type": "doc"
 }, {
-"column": 92,
+"column": 35,
 "current": true,
-"line": 16,
+"line": 55,
 "path": "res://scripts/main_menu.gd",
 "type": "file"
 }, {

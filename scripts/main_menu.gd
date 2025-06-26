@@ -47,8 +47,10 @@ func _process(_delta: float) -> void:
 	if absf(angle_difference(selection_rotator.rotation, PI)) < PI/6:
 		$Confirmation/ConfirmOption.active = true
 		$Confirmation/PressTarget.show()
-		$Confirmation/TutorialArrow.hide()
+		$Confirmation/RotateArrow.hide()
+		$Confirmation/RotateArrow2.hide()
 	else:
 		$Confirmation/ConfirmOption.active = false
 		$Confirmation/PressTarget.hide()
-		$Confirmation/TutorialArrow.show()
+		$Confirmation/RotateArrow.show()
+		$Confirmation/RotateArrow2.show()
