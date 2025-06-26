@@ -3,6 +3,7 @@ extends Control
 func start() -> void:
 	show()
 	$EventfulAudioStreamPlayer.play()
+	$ConfirmButton.grab_focus()
 
 func end() -> void:
 	hide()

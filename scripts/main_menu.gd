@@ -42,6 +42,8 @@ func _ready() -> void:
 	$LatencyCheck/ConfirmButton.pressed.connect(finish)
 	
 	$Confirmation.process_mode = Node.PROCESS_MODE_DISABLED
+	
+	$InputModeSelection/ButtonContainer/SensorsButton.grab_focus()
 
 func _process(_delta: float) -> void:
 	if absf(angle_difference(selection_rotator.rotation, PI)) < PI/6:
