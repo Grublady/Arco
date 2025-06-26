@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://pqsscp47tjbh" path="res://scripts/rotator_2d.gd" id="8_077fr"]
 [ext_resource type="Script" uid="uid://cqa35ktcxmrxu" path="res://scripts/check_particles_generator.gd" id="10_6qxjb"]
 [ext_resource type="Script" uid="uid://crhmmlminl4r4" path="res://scripts/check_hit_sfx.gd" id="11_1s760"]
-[ext_resource type="AudioStream" uid="uid://d2d3q7yc5rdm1" path="res://audio/click.wav" id="11_xx4ec"]
+[ext_resource type="AudioStream" uid="uid://beejdpctmcsd4" path="res://audio/clapper.wav" id="11_xx4ec"]
 
 [node name="Song" type="Node2D"]
 
@@ -83,6 +83,7 @@ particle_kinds = Dictionary[String, Color]({
 
 [node name="CheckHitSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_xx4ec")
+volume_db = -12.0
 script = ExtResource("11_1s760")
 
 [connection signal="timeout" from="EventfulAudioStreamPlayer/Timer" to="EventfulAudioStreamPlayer" method="play"]
