@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cnucdprcvp5kp"]
+[gd_scene load_steps=13 format=3 uid="uid://cnucdprcvp5kp"]
 
 [ext_resource type="Script" uid="uid://co6wy5tg0krb" path="res://scripts/eventful_audio_stream_player.gd" id="2_2luy8"]
 [ext_resource type="PackedScene" uid="uid://dxkh8w2ds2brx" path="res://scenes/background.tscn" id="2_uvvid"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://coejdc7tqlu5s" path="res://scripts/arc_2d.gd" id="7_3wyln"]
 [ext_resource type="Script" uid="uid://pqsscp47tjbh" path="res://scripts/rotator_2d.gd" id="8_077fr"]
 [ext_resource type="Script" uid="uid://cqa35ktcxmrxu" path="res://scripts/check_particles_generator.gd" id="10_6qxjb"]
+[ext_resource type="Script" uid="uid://crhmmlminl4r4" path="res://scripts/check_hit_sfx.gd" id="11_1s760"]
+[ext_resource type="AudioStream" uid="uid://d2d3q7yc5rdm1" path="res://audio/click.wav" id="11_xx4ec"]
 
 [node name="Song" type="Node2D"]
 
@@ -74,9 +76,13 @@ color = Color(1.06116, 0.609116, 0.532013, 1)
 
 [node name="CheckParticlesGenerator" type="Node2D" parent="."]
 script = ExtResource("10_6qxjb")
-particle_kinds = {
+particle_kinds = Dictionary[String, Color]({
 "ring1": Color(1.02669, 0.86171, 1.00941, 1),
 "ring2": Color(0.938507, 1.00201, 0.655426, 1)
-}
+})
+
+[node name="CheckHitSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_xx4ec")
+script = ExtResource("11_1s760")
 
 [connection signal="timeout" from="EventfulAudioStreamPlayer/Timer" to="EventfulAudioStreamPlayer" method="play"]

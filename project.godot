@@ -133,7 +133,7 @@ project/editorState=[{
 "title": "Curve",
 "type": "doc"
 }, {
-"column": 80,
+"column": 0,
 "line": 96,
 "path": "res://scripts/ringleader.gd",
 "type": "file"
@@ -143,20 +143,25 @@ project/editorState=[{
 "path": "res://scripts/pin.gd",
 "type": "file"
 }, {
-"column": 37,
+"column": 0,
 "line": 13,
 "path": "res://scripts/score.gd",
 "type": "file"
 }, {
-"column": 30,
-"current": true,
-"line": 20,
+"column": 1,
+"line": 12,
 "path": "res://scripts/check_particles_generator.gd",
 "type": "file"
 }, {
-"column": 51,
+"column": 0,
 "line": 12,
 "path": "res://scripts/event_bus.gd",
+"type": "file"
+}, {
+"column": 8,
+"current": true,
+"line": 7,
+"path": "res://scripts/check_hit_sfx.gd",
 "type": "file"
 }]
 project/xogot_game_id="834_xogot-jam"

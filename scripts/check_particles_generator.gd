@@ -10,12 +10,13 @@ func _ready() -> void:
 func _on_check_event(success: bool, event_position: Vector2, event_rotation: float, kind: String) -> void:
 	if not success:
 		return
+	
 	var new_particles := particles_scene.instantiate()
 	add_child(new_particles)
+	
 	new_particles.global_position = event_position
 	new_particles.rotation = event_rotation
-	print(kind)
-	print(particle_kinds[kind])
 	if particle_kinds.has(kind):
 		new_particles.modulate = particle_kinds[kind]
+	
 	new_particles.emitting = true
