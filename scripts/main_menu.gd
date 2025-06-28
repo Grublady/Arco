@@ -1,9 +1,12 @@
 extends Control
 
+@export var DEBUG := false
+
 @onready var selection_rotator := $Confirmation/Rotator2D
 
 func finish() -> void:
-	get_tree().change_scene_to_file("res://scenes/songs/xogot_jam_jam.tscn")
+#	get_tree().change_scene_to_file("res://scenes/songs/xogot_jam_jam.tscn")
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 
 func show_input_modes() -> void:
 	$InputModeSelection.show()
@@ -11,6 +14,9 @@ func hide_input_modes() -> void:
 	$InputModeSelection.hide()
 
 func show_input_confirmation() -> void:
+	if DEBUG:
+		finish()
+		return
 	$Confirmation.show()
 	$Confirmation.process_mode = Node.PROCESS_MODE_INHERIT
 	selection_rotator.rotating = true
@@ -46,13 +52,7 @@ func _ready() -> void:
 	$InputModeSelection/ButtonContainer/SensorsButton.grab_focus()
 
 func _process(_delta: float) -> void:
-	if absf(angle_difference(selection_rotator.rotation, PI)) < PI/6:
-		$Confirmation/ConfirmOption.active = true
-		$Confirmation/PressTarget.show()
-		$Confirmation/RotateArrow.hide()
-		$Confirmation/RotateArrow2.hide()
-	else:
-		$Confirmation/ConfirmOption.active = false
-		$Confirmation/PressTarget.hide()
-		$Confirmation/RotateArrow.show()
-		$Confirmation/RotateArrow2.show()
+	var active: bool = $Confirmation/ConfirmOption.active
+	$Confirmation/PressTarget.visible = (active)
+	$Confirmation/RotateArrow.visible = (not active)
+	$Confirmation/RotateArrow2.visible = (not active)

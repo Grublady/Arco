@@ -197,6 +197,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Confirm"
 label_settings = SubResource("LabelSettings_wu84c")
+menu_center = Vector2(320, 320)
 
 [node name="CancelButton" type="Button" parent="Confirmation"]
 layout_mode = 0
