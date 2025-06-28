@@ -1,11 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://coxk2abimqhsr"]
+[gd_scene load_steps=11 format=3 uid="uid://coxk2abimqhsr"]
 
 [ext_resource type="Script" uid="uid://syal5715husq" path="res://scripts/menu.gd" id="1_l48gv"]
 [ext_resource type="PackedScene" uid="uid://dxkh8w2ds2brx" path="res://scenes/background.tscn" id="1_mae5d"]
 [ext_resource type="Script" uid="uid://pqsscp47tjbh" path="res://scripts/rotator_2d.gd" id="1_ouk20"]
 [ext_resource type="Script" uid="uid://428mtpgw1rlv" path="res://scripts/ui_rotator.gd" id="2_4hy44"]
+[ext_resource type="PackedScene" uid="uid://q6ahn5v6mmjq" path="res://scenes/press_target.tscn" id="3_13sgg"]
 [ext_resource type="Script" uid="uid://coejdc7tqlu5s" path="res://scripts/arc_2d.gd" id="3_mae5d"]
 [ext_resource type="PackedScene" uid="uid://ia87tskeu176" path="res://scenes/menu_option.tscn" id="6_g3eks"]
+[ext_resource type="SystemFont" uid="uid://7tbqh57wvo12" path="res://resources/base_font.tres" id="7_v86rl"]
+
+[sub_resource type="FontVariation" id="FontVariation_xh7n7"]
+base_font = ExtResource("7_v86rl")
+variation_transform = Transform2D(1, 0.33, 0, 1, 0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_13sgg"]
+font = SubResource("FontVariation_xh7n7")
+font_size = 20
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_l48gv")
@@ -13,6 +23,13 @@ script = ExtResource("1_l48gv")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Background" parent="." instance=ExtResource("1_mae5d")]
+
+[node name="PressTarget" parent="." instance=ExtResource("3_13sgg")]
+offset_left = -320.0
+offset_top = -320.0
+offset_right = 320.0
+offset_bottom = 320.0
+metadata/_edit_use_anchors_ = true
 
 [node name="UIRotator" type="Node2D" parent="."]
 script = ExtResource("2_4hy44")
@@ -31,6 +48,7 @@ offset_right = 240.0
 offset_bottom = 240.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="UIRotator/Control"]
 layout_mode = 1
@@ -41,7 +59,7 @@ offset_left = -120.0
 offset_right = 120.0
 offset_bottom = 57.0
 grow_horizontal = 2
-text = "Label"
+text = "Select Song"
 horizontal_alignment = 1
 
 [node name="Rotator2D" type="Node2D" parent="."]
@@ -56,20 +74,10 @@ offset = 0.25
 color = Color(0.52272, 0.47023, 1.03392, 1)
 metadata/_custom_type_script = "uid://coejdc7tqlu5s"
 
-[node name="MenuOption" parent="." instance=ExtResource("6_g3eks")]
-offset_left = -304.0
-offset_top = -31.0
-offset_right = -104.0
-offset_bottom = 29.0
-
-[node name="MenuOption2" parent="." instance=ExtResource("6_g3eks")]
-offset_left = -108.0
-offset_top = -160.0
-offset_right = 92.0
-offset_bottom = -100.0
-
-[node name="MenuOption3" parent="." instance=ExtResource("6_g3eks")]
-offset_left = 74.0
-offset_top = -27.0
-offset_right = 274.0
-offset_bottom = 33.0
+[node name="SongXJJOption" parent="." instance=ExtResource("6_g3eks")]
+offset_left = -100.0
+offset_top = -169.0
+offset_right = 100.0
+offset_bottom = -109.0
+text = "A Xogot Jam Jam"
+label_settings = SubResource("LabelSettings_13sgg")

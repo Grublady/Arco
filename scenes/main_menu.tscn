@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://boecd0bnfb5bt"]
+[gd_scene load_steps=23 format=3 uid="uid://boecd0bnfb5bt"]
 
 [ext_resource type="Theme" uid="uid://dgmb2646iktpp" path="res://resources/theme.tres" id="1_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://dxkh8w2ds2brx" path="res://scenes/background.tscn" id="1_l6cm7"]
@@ -6,12 +6,12 @@
 [ext_resource type="SystemFont" uid="uid://7tbqh57wvo12" path="res://resources/base_font.tres" id="3_bqqt6"]
 [ext_resource type="Script" uid="uid://ygtrimm8jn2r" path="res://scripts/input_mode_sensors_button.gd" id="4_8ln24"]
 [ext_resource type="Script" uid="uid://cxln43a233oir" path="res://scripts/input_mode_button.gd" id="4_wu84c"]
+[ext_resource type="PackedScene" uid="uid://q6ahn5v6mmjq" path="res://scenes/press_target.tscn" id="5_5pajh"]
 [ext_resource type="Script" uid="uid://pqsscp47tjbh" path="res://scripts/rotator_2d.gd" id="7_jk1qb"]
 [ext_resource type="Script" uid="uid://coejdc7tqlu5s" path="res://scripts/arc_2d.gd" id="8_5dd4i"]
 [ext_resource type="PackedScene" uid="uid://ia87tskeu176" path="res://scenes/menu_option.tscn" id="9_jk1qb"]
 [ext_resource type="Texture2D" uid="uid://d0lrf1w1nplun" path="res://images/rotate_arrow.png" id="11_5pajh"]
 [ext_resource type="AudioStream" uid="uid://bkdw57oiyxpbw" path="res://audio/test.wav" id="11_flqon"]
-[ext_resource type="Script" uid="uid://dmy5sma8ng5a1" path="res://scripts/press_target.gd" id="11_lgwnu"]
 [ext_resource type="Script" uid="uid://ee6k8r2rr6dp" path="res://scripts/latency_check.gd" id="11_rcqid"]
 [ext_resource type="Script" uid="uid://co6wy5tg0krb" path="res://scripts/eventful_audio_stream_player.gd" id="12_flqon"]
 [ext_resource type="AudioStream" uid="uid://d2d3q7yc5rdm1" path="res://audio/click.wav" id="14_7b55j"]
@@ -44,25 +44,6 @@ font = SubResource("FontVariation_rtw2f")
 font_size = 32
 outline_size = 4
 outline_color = Color(0.190887, 0.0804901, 0.391968, 1)
-
-[sub_resource type="Gradient" id="Gradient_jk1qb"]
-offsets = PackedFloat32Array(0, 0.6, 1)
-colors = PackedColorArray(0.421112, 0.338394, 0.94931, 1, 0.345734, 0.277802, 0.779495, 0.5, 0.270355, 0.217209, 0.60968, 0)
-metadata/_snap_enabled = true
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_5dd4i"]
-gradient = SubResource("Gradient_jk1qb")
-width = 80
-height = 80
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.5, 0)
-metadata/_snap_enabled = true
-
-[sub_resource type="Curve" id="Curve_lgwnu"]
-_data = [Vector2(0, 0.5), 0.0, 0.036057, 0, 0, Vector2(0.5, 1), -0.0863273, -0.0863273, 0, 0, Vector2(1, 0.5), 0.225181, 0.0, 0, 0]
-point_count = 3
-metadata/_snap_enabled = true
 
 [sub_resource type="LabelSettings" id="LabelSettings_7b55j"]
 
@@ -97,6 +78,9 @@ text = "Arco"
 label_settings = SubResource("LabelSettings_8ln24")
 horizontal_alignment = 1
 
+[node name="PressTarget" parent="." instance=ExtResource("5_5pajh")]
+layout_mode = 1
+
 [node name="InputModeSelection" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -104,6 +88,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="InputModeSelection"]
 modulate = Color(0.999985, 1, 1, 0.774403)
@@ -167,6 +152,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Rotator2D" type="Node2D" parent="Confirmation"]
 position = Vector2(320, 320)
@@ -207,13 +193,6 @@ offset_right = 156.0
 offset_bottom = 604.0
 text = "Cancel"
 
-[node name="PressTarget" type="Sprite2D" parent="Confirmation"]
-modulate = Color(0.723724, 1.00777, 1.00363, 1)
-position = Vector2(320, 320)
-texture = SubResource("GradientTexture2D_5dd4i")
-script = ExtResource("11_lgwnu")
-curve = SubResource("Curve_lgwnu")
-
 [node name="RotationLockLabel" type="Label" parent="Confirmation"]
 visible = false
 layout_mode = 0
@@ -245,6 +224,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("11_rcqid")
 
 [node name="SpinBox" type="SpinBox" parent="LatencyCheck"]

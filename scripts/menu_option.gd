@@ -25,18 +25,6 @@ func _process(_delta: float) -> void:
 	var angle := get_offset_from_menu().angle() + PI/2
 	active = ( abs(angle_difference(RotationInput.rotation, angle)) <= PI/6 ) # 30°
 
-func _input(event: InputEvent) -> void:
-	if not active:
-		return
-	if not event.is_pressed():
-		return
-	
-	if event is InputEventJoypadButton:
-		pressed.emit()
-	elif event is InputEventMouseButton or event is InputEventScreenTouch:
-		if (event.position - get_viewport_rect().size/2).length_squared() <= 80**2:
-			pressed.emit()
-
 func _set_active(new_value: bool) -> void:
 	active = new_value
 	if active:
