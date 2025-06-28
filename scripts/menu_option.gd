@@ -23,7 +23,7 @@ func _process(_delta: float) -> void:
 		rotation = 0
 	
 	var angle := get_offset_from_menu().angle() + PI/2
-	active = ( abs(angle_difference(rotation, angle)) <= PI/6 ) # 30°
+	active = ( abs(angle_difference(RotationInput.rotation, angle)) <= PI/6 ) # 30°
 
 func _input(event: InputEvent) -> void:
 	if not active:
