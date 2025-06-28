@@ -68,3 +68,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		elif $LatencyCheck.visible:
 			hide_latency_check()
 			show_input_confirmation()
+	elif event.is_action_pressed("ui_spinbox_increase"):
+		if $LatencyCheck.visible:
+			$LatencyCheck/SpinBox.value += $LatencyCheck/SpinBox.custom_arrow_step
+	elif event.is_action_pressed("ui_spinbox_decrease"):
+		if $LatencyCheck.visible:
+			$LatencyCheck/SpinBox.value -= $LatencyCheck/SpinBox.custom_arrow_step
