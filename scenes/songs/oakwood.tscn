@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://byx4l58we6ry3"]
+
+[ext_resource type="PackedScene" uid="uid://cnucdprcvp5kp" path="res://scenes/song.tscn" id="1_oqyyu"]
+[ext_resource type="AudioStream" uid="uid://x3rd4i6elad7" path="res://audio/oakwood.ogg" id="2_ytfup"]
+
+[node name="Song" instance=ExtResource("1_oqyyu")]
+
+[node name="EventfulAudioStreamPlayer" parent="." index="0"]
+stream = ExtResource("2_ytfup")
+tempo = 92.0
+events_string = "-1:0:activate:ring1
+-1:0:print:ok1
+
+0:4:indicator:ring1:0
+4:4:indicator:ring1:0"

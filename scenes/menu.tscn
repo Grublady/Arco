@@ -72,11 +72,19 @@ color = Color(0.52272, 0.47023, 1.03392, 1)
 metadata/_custom_type_script = "uid://coejdc7tqlu5s"
 
 [node name="SongXJJOption" parent="." instance=ExtResource("6_g3eks")]
-offset_left = -100.0
-offset_top = -169.0
-offset_right = 100.0
-offset_bottom = -109.0
+offset_left = -234.0
+offset_top = -144.0
+offset_right = -34.0
+offset_bottom = -84.0
 text = "A Xogot Jam Jam"
+label_settings = ExtResource("8_13sgg")
+
+[node name="SongOakwoodOption" parent="." instance=ExtResource("6_g3eks")]
+offset_left = 34.0
+offset_top = -144.0
+offset_right = 234.0
+offset_bottom = -84.0
+text = "Oakwood"
 label_settings = ExtResource("8_13sgg")
 
 [node name="MainMenuOption" parent="." instance=ExtResource("6_g3eks")]
