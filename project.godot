@@ -81,8 +81,9 @@ project/breakpoints={
 "res://scripts/rotation_input.gd": PackedInt32Array()
 }
 project/editorState=[{
-"column": 0,
-"line": 64,
+"column": 73,
+"current": true,
+"line": 85,
 "path": "res://scripts/main_menu.gd",
 "type": "file"
 }, {
@@ -109,8 +110,8 @@ project/editorState=[{
 "path": "res://scripts/rotation_input.gd",
 "type": "file"
 }, {
-"column": 26,
-"line": 12,
+"column": 20,
+"line": 14,
 "path": "res://scripts/input_mode_sensors_button.gd",
 "type": "file"
 }, {
@@ -124,13 +125,13 @@ project/editorState=[{
 "path": "res://scripts/latency_check.gd",
 "type": "file"
 }, {
-"column": 43,
-"line": 31,
+"column": 25,
+"line": 18,
 "path": "res://scripts/menu_option.gd",
 "type": "file"
 }, {
-"column": 26,
-"line": 16,
+"column": 0,
+"line": 0,
 "path": "res://scripts/web_sensors.gd",
 "type": "file"
 }, {
@@ -151,7 +152,6 @@ project/editorState=[{
 "type": "file"
 }, {
 "column": 0,
-"current": true,
 "line": 0,
 "path": "res://scripts/song.gd",
 "type": "file"

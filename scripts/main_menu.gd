@@ -3,7 +3,6 @@ extends Control
 @onready var selection_rotator := $Confirmation/Rotator2D
 
 func finish() -> void:
-#	get_tree().change_scene_to_file("res://scenes/songs/xogot_jam_jam.tscn")
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 
 func show_input_modes() -> void:
@@ -19,7 +18,12 @@ func show_input_confirmation() -> void:
 	$Confirmation.process_mode = Node.PROCESS_MODE_INHERIT
 	RotationInput.rotation = 0
 	selection_rotator.rotating = true
-	$Confirmation/Rotator2D/RotationLockLabel.visible = (RotationInput.mode == RotationInput.Mode.sensor)
+	if RotationInput.mode == RotationInput.Mode.sensor:
+		$Confirmation/RotationLockLabel.show()
+		$Confirmation/ConfirmOption.rotation = PI
+	else:
+		$Confirmation/RotationLockLabel.hide()
+		$Confirmation/ConfirmOption.rotation = 0
 func hide_input_confirmation() -> void:
 	$Confirmation.hide()
 	$Confirmation.process_mode = Node.PROCESS_MODE_DISABLED
@@ -61,7 +65,8 @@ func _process(_delta: float) -> void:
 	var active: bool = $Confirmation/ConfirmOption.active
 	$Confirmation/RotateArrow.visible = (not active)
 	$Confirmation/RotateArrow2.visible = (not active)
-	$Confirmation/Rotator2D/RotationLockLabel.visible = (not active)
+	$Confirmation/RotationLockLabel.visible = (RotationInput.mode == RotationInput.Mode.sensor and not active)
+	$Confirmation/Rotator2D/TutorialLabel.visible = (not active)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
