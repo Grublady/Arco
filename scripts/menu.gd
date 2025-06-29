@@ -2,7 +2,8 @@ extends Node2D
 
 @onready var options: Dictionary[Node, String] = {
 	$SongXJJOption: "res://scenes/songs/xogot_jam_jam.tscn",
-	$MainMenuOption: "res://scenes/main_menu.tscn"
+	$MainMenuOption: "res://scenes/main_menu.tscn",
+	$LatencyOption: "res://scenes/latency_check.tscn",
 }
 
 func _ready() -> void:

@@ -1,21 +1,18 @@
 extends Control
 
-func start() -> void:
-	$SpinBox/LRButtonLabel.visible = (RotationInput.mode == RotationInput.Mode.joystick)
-	show()
-	$EventfulAudioStreamPlayer.play()
-	$ConfirmButton.grab_focus()
-
-func end() -> void:
-	hide()
-	$EventfulAudioStreamPlayer.stop()
-
 func _ready() -> void:
+	$SpinBox.value = Settings.latency * 1000
+	
 	EventBus.audio_event.connect(_on_audio_event)
 	$SpinBox.value_changed.connect(_on_value_changed)
-	if OS.has_feature("web"):
-		$SpinBox.value = -100
-
+	
+	$ConfirmButton.pressed.connect(get_tree().change_scene_to_file.bind("res://scenes/menu.tscn"))
+	
+	$SpinBox/LRButtonLabel.visible = (RotationInput.mode == RotationInput.Mode.joystick)
+	
+	$ConfirmButton.grab_focus()
+	
+	$EventfulAudioStreamPlayer.play()
 
 func _on_audio_event(event: EventBus.AudioEvent) -> void:
 	var data := event.data.duplicate()
@@ -30,3 +27,9 @@ func _on_audio_event(event: EventBus.AudioEvent) -> void:
 func _on_value_changed(value: float) -> void:
 	Settings.latency = value / 1000
 	$EventfulAudioStreamPlayer.custom_latency = Settings.latency
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_spinbox_increase"):
+		$SpinBox.value += $SpinBox.custom_arrow_step
+	elif event.is_action_pressed("ui_spinbox_decrease"):
+		$SpinBox.value -= $SpinBox.custom_arrow_step

@@ -81,17 +81,16 @@ project/breakpoints={
 "res://scripts/rotation_input.gd": PackedInt32Array()
 }
 project/editorState=[{
-"column": 73,
-"current": true,
-"line": 85,
+"column": 0,
+"line": 31,
 "path": "res://scripts/main_menu.gd",
 "type": "file"
 }, {
 "title": "Control",
 "type": "doc"
 }, {
-"column": 0,
-"line": 4,
+"column": 51,
+"line": 5,
 "path": "res://scripts/menu.gd",
 "type": "file"
 }, {
@@ -110,7 +109,7 @@ project/editorState=[{
 "path": "res://scripts/rotation_input.gd",
 "type": "file"
 }, {
-"column": 20,
+"column": 0,
 "line": 14,
 "path": "res://scripts/input_mode_sensors_button.gd",
 "type": "file"
@@ -121,11 +120,11 @@ project/editorState=[{
 "type": "file"
 }, {
 "column": 0,
-"line": 1,
+"line": 2,
 "path": "res://scripts/latency_check.gd",
 "type": "file"
 }, {
-"column": 25,
+"column": 0,
 "line": 18,
 "path": "res://scripts/menu_option.gd",
 "type": "file"
@@ -154,6 +153,11 @@ project/editorState=[{
 "column": 0,
 "line": 0,
 "path": "res://scripts/song.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 5,
+"path": "res://scripts/settings.gd",
 "type": "file"
 }]
 project/xogot_game_id="834_arco"

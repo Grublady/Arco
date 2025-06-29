@@ -1,0 +1,138 @@
+[gd_scene load_steps=7 format=3 uid="uid://bxeg5lwif4w37"]
+
+[ext_resource type="Script" uid="uid://ee6k8r2rr6dp" path="res://scripts/latency_check.gd" id="1_oc23v"]
+[ext_resource type="AudioStream" uid="uid://bkdw57oiyxpbw" path="res://audio/test.wav" id="2_gqika"]
+[ext_resource type="PackedScene" uid="uid://dxkh8w2ds2brx" path="res://scenes/background.tscn" id="2_olrr1"]
+[ext_resource type="Script" uid="uid://co6wy5tg0krb" path="res://scripts/eventful_audio_stream_player.gd" id="3_olrr1"]
+[ext_resource type="AudioStream" uid="uid://d2d3q7yc5rdm1" path="res://audio/click.wav" id="4_vox7w"]
+[ext_resource type="Script" uid="uid://crhmmlminl4r4" path="res://scripts/check_hit_sfx.gd" id="5_w8g4c"]
+
+[node name="LatencyCheck" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_oc23v")
+
+[node name="Background" parent="." instance=ExtResource("2_olrr1")]
+position = Vector2(320, 320)
+
+[node name="SpinBox" type="SpinBox" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -120.0
+offset_right = 91.75
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/up_hover_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_disabled_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_hover_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_disabled_icon_modulate = Color(0, 0, 0, 1)
+theme_override_constants/set_min_buttons_width_from_icons = 0
+theme_override_constants/buttons_width = 40
+theme_override_constants/field_and_buttons_separation = 8
+theme_override_constants/buttons_vertical_separation = 8
+min_value = -1000.0
+max_value = 1000.0
+rounded = true
+allow_greater = true
+allow_lesser = true
+alignment = 2
+update_on_text_changed = true
+suffix = "ms"
+custom_arrow_step = 4.0
+
+[node name="LRButtonLabel" type="Label" parent="SpinBox"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -3.75
+offset_top = -25.5
+offset_right = 60.25
+offset_bottom = 25.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "L/R"
+vertical_alignment = 1
+
+[node name="EventfulAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_gqika")
+script = ExtResource("3_olrr1")
+events_string = "0:0:test
+2:0:test
+4:0:test
+6:0:test
+8:0:test
+10:0:test
+12:0:test
+14:0:test
+16:0:test
+18:0:test
+20:0:test
+22:0:test
+24:0:test
+26:0:test
+28:0:test
+30:0:test"
+metadata/_custom_type_script = "uid://co6wy5tg0krb"
+
+[node name="HitSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_vox7w")
+volume_db = 3.0
+script = ExtResource("5_w8g4c")
+
+[node name="FlashContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -240.0
+offset_top = -330.0
+offset_right = 240.0
+offset_bottom = -290.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Flash1" type="ColorRect" parent="FlashContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1.07309, 0.475433, 1.02632, 1)
+
+[node name="Flash2" type="ColorRect" parent="FlashContainer"]
+modulate = Color(0.999985, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.242874, 1.01424, 1.00665, 1)
+
+[node name="ConfirmButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -127.0
+offset_top = -265.0
+offset_right = 127.0
+offset_bottom = -210.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Confirm Latency"

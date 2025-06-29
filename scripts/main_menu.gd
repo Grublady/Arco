@@ -30,15 +30,9 @@ func hide_input_confirmation() -> void:
 	selection_rotator.rotating = false
 	selection_rotator.rotation = 0
 
-func show_latency_check() -> void:
-	$LatencyCheck.start()
-func hide_latency_check() -> void:
-	$LatencyCheck.end()
-
 func _on_press_target_pressed() -> void:
 	if $Confirmation.visible and $Confirmation/ConfirmOption.active:
-		hide_input_confirmation()
-		show_latency_check()
+		finish()
 
 func _ready() -> void:
 	$PressTarget.pressed.connect(_on_press_target_pressed)
@@ -49,11 +43,6 @@ func _ready() -> void:
 	
 	$Confirmation/CancelButton.pressed.connect(hide_input_confirmation)
 	$Confirmation/CancelButton.pressed.connect(show_input_modes)
-	
-	$LatencyCheck/CancelButton.pressed.connect(hide_latency_check)
-	$LatencyCheck/CancelButton.pressed.connect(show_input_confirmation)
-	
-	$LatencyCheck/ConfirmButton.pressed.connect(finish)
 	
 	$Confirmation/ResetButton.pressed.connect(RotationInput.calibrate)
 	
@@ -70,17 +59,7 @@ func _process(_delta: float) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
-		if $InputModeSelection.visible:
-			return
-		elif $Confirmation.visible:
+		if $Confirmation.visible:
+			get_viewport().set_input_as_handled()
 			hide_input_confirmation()
 			show_input_modes()
-		elif $LatencyCheck.visible:
-			hide_latency_check()
-			show_input_confirmation()
-	elif event.is_action_pressed("ui_spinbox_increase"):
-		if $LatencyCheck.visible:
-			$LatencyCheck/SpinBox.value += $LatencyCheck/SpinBox.custom_arrow_step
-	elif event.is_action_pressed("ui_spinbox_decrease"):
-		if $LatencyCheck.visible:
-			$LatencyCheck/SpinBox.value -= $LatencyCheck/SpinBox.custom_arrow_step

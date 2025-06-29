@@ -80,10 +80,19 @@ text = "A Xogot Jam Jam"
 label_settings = ExtResource("8_13sgg")
 
 [node name="MainMenuOption" parent="." instance=ExtResource("6_g3eks")]
-offset_left = -100.0
-offset_top = 160.0
-offset_right = 100.0
-offset_bottom = 229.0
+offset_left = -220.0
+offset_top = 112.0
+offset_right = -20.0
+offset_bottom = 181.0
 text = "Exit to
 Title Menu"
+label_settings = SubResource("LabelSettings_i6lef")
+
+[node name="LatencyOption" parent="." instance=ExtResource("6_g3eks")]
+offset_left = 20.0
+offset_top = 112.0
+offset_right = 220.0
+offset_bottom = 181.0
+text = "Adjust Latency
+Compensation"
 label_settings = SubResource("LabelSettings_i6lef")
