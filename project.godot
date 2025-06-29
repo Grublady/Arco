@@ -82,7 +82,6 @@ project/breakpoints={
 }
 project/editorState=[{
 "column": 0,
-"current": true,
 "line": 64,
 "path": "res://scripts/main_menu.gd",
 "type": "file"
@@ -149,6 +148,12 @@ project/editorState=[{
 "column": 0,
 "line": 0,
 "path": "res://scripts/web_permissions_button.gd",
+"type": "file"
+}, {
+"column": 0,
+"current": true,
+"line": 0,
+"path": "res://scripts/song.gd",
 "type": "file"
 }]
 project/xogot_game_id="834_arco"
