@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://boecd0bnfb5bt"]
+[gd_scene load_steps=21 format=3 uid="uid://boecd0bnfb5bt"]
 
 [ext_resource type="Theme" uid="uid://dgmb2646iktpp" path="res://resources/theme.tres" id="1_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://dxkh8w2ds2brx" path="res://scenes/background.tscn" id="1_l6cm7"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://coejdc7tqlu5s" path="res://scripts/arc_2d.gd" id="8_5dd4i"]
 [ext_resource type="PackedScene" uid="uid://ia87tskeu176" path="res://scenes/menu_option.tscn" id="9_jk1qb"]
 [ext_resource type="Texture2D" uid="uid://d0lrf1w1nplun" path="res://images/rotate_arrow.png" id="11_5pajh"]
+[ext_resource type="PackedScene" uid="uid://cs6g2cemd8qo4" path="res://scenes/check_hit_particles.tscn" id="12_flqon"]
 
 [sub_resource type="FontVariation" id="FontVariation_wu84c"]
 base_font = ExtResource("3_bqqt6")
@@ -245,3 +246,7 @@ offset_top = 549.0
 offset_right = 607.0
 offset_bottom = 604.0
 text = "Reset Orientation"
+
+[node name="CheckHitParticlesPreload" parent="." instance=ExtResource("12_flqon")]
+modulate = Color(0.999985, 1, 1, 0)
+position = Vector2(320, 320)
