@@ -55,15 +55,21 @@ func _process(_delta: float) -> void:
 	
 	var time := get_playback_position()
 	
+	if (
+		stream is AudioStreamWAV
+		and stream.loop_mode == AudioStreamWAV.LOOP_FORWARD
+		and fmod(time, stream.loop_end / stream.mix_rate) < _previous_time - 1
+	):
+		# loop detection hack
+		_previous_time = stream.loop_begin/stream.mix_rate
+		play(_previous_time)
+		time = _previous_time
+	
 	var custom_start_time := custom_start * 60 / tempo
 	if time < custom_start_time:
 		play(custom_start_time)
 		time = custom_start_time
 		_previous_time = custom_start_time
-	
-	if time < _previous_time - 1:
-		# loop detection hack
-		_previous_time = 0
 	
 	time += AudioServer.get_time_since_last_mix()
 	time -= _output_latency

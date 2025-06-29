@@ -1,10 +1,9 @@
 extends Control
 
 func _ready() -> void:
-	$SpinBox.value = Settings.latency * 1000
-	
 	EventBus.audio_event.connect(_on_audio_event)
 	$SpinBox.value_changed.connect(_on_value_changed)
+	$SpinBox.value = Settings.latency * 1000
 	
 	$ConfirmButton.pressed.connect(get_tree().change_scene_to_file.bind("res://scenes/menu.tscn"))
 	
