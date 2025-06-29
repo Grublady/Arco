@@ -151,7 +151,6 @@ project/editorState=[{
 "type": "file"
 }, {
 "column": 0,
-"current": true,
 "line": 0,
 "path": "res://scripts/song.gd",
 "type": "file"
@@ -159,6 +158,12 @@ project/editorState=[{
 "column": 0,
 "line": 5,
 "path": "res://scripts/settings.gd",
+"type": "file"
+}, {
+"column": 0,
+"current": true,
+"line": 0,
+"path": "res://scripts/eventful_audio_stream_player.gd",
 "type": "file"
 }]
 project/xogot_game_id="834_arco"
