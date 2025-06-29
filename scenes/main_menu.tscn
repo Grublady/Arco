@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://boecd0bnfb5bt"]
+[gd_scene load_steps=24 format=3 uid="uid://boecd0bnfb5bt"]
 
 [ext_resource type="Theme" uid="uid://dgmb2646iktpp" path="res://resources/theme.tres" id="1_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://dxkh8w2ds2brx" path="res://scenes/background.tscn" id="1_l6cm7"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://ygtrimm8jn2r" path="res://scripts/input_mode_sensors_button.gd" id="4_8ln24"]
 [ext_resource type="Script" uid="uid://cxln43a233oir" path="res://scripts/input_mode_button.gd" id="4_wu84c"]
 [ext_resource type="PackedScene" uid="uid://q6ahn5v6mmjq" path="res://scenes/press_target.tscn" id="5_5pajh"]
+[ext_resource type="LabelSettings" uid="uid://ryey1oo7qh5j" path="res://ls.tres" id="6_a8gd2"]
 [ext_resource type="Script" uid="uid://pqsscp47tjbh" path="res://scripts/rotator_2d.gd" id="7_jk1qb"]
 [ext_resource type="Script" uid="uid://coejdc7tqlu5s" path="res://scripts/arc_2d.gd" id="8_5dd4i"]
 [ext_resource type="PackedScene" uid="uid://ia87tskeu176" path="res://scenes/menu_option.tscn" id="9_jk1qb"]
@@ -39,13 +40,17 @@ shadow_offset = Vector2(50, 50)
 base_font = ExtResource("3_bqqt6")
 variation_embolden = 0.5
 
-[sub_resource type="LabelSettings" id="LabelSettings_wu84c"]
+[sub_resource type="LabelSettings" id="LabelSettings_j7ex8"]
 font = SubResource("FontVariation_rtw2f")
 font_size = 32
 outline_size = 4
 outline_color = Color(0.190887, 0.0804901, 0.391968, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_7b55j"]
+[sub_resource type="LabelSettings" id="LabelSettings_wu84c"]
+font = SubResource("FontVariation_rtw2f")
+font_size = 32
+outline_size = 4
+outline_color = Color(0.190887, 0.0804901, 0.391968, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -108,7 +113,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 32
 text = "Select Input Mode"
-label_settings = SubResource("LabelSettings_wu84c")
+label_settings = SubResource("LabelSettings_j7ex8")
 
 [node name="ButtonContainer" type="HFlowContainer" parent="InputModeSelection"]
 layout_mode = 1
@@ -116,13 +121,13 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 162.0
-offset_top = -366.0
-offset_right = -162.0
+offset_left = 195.0
+offset_top = -400.0
+offset_right = -194.0
 offset_bottom = -160.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/h_separation = 20
+theme_override_constants/h_separation = 60
 theme_override_constants/v_separation = 20
 alignment = 1
 
@@ -168,6 +173,18 @@ offset = 0.25
 color = Color(0.953934, 0.386551, 0.402924, 1)
 metadata/_custom_type_script = "uid://coejdc7tqlu5s"
 
+[node name="RotationLockLabel" type="Label" parent="Confirmation/Rotator2D"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -241.5
+offset_top = -180.0
+offset_right = 241.5
+offset_bottom = -117.0
+grow_horizontal = 2
+text = "Rotation Lock Recommended"
+label_settings = ExtResource("6_a8gd2")
+
 [node name="ConfirmOption" parent="Confirmation" instance=ExtResource("9_jk1qb")]
 layout_mode = 1
 anchors_preset = 7
@@ -192,16 +209,6 @@ offset_top = 549.0
 offset_right = 156.0
 offset_bottom = 604.0
 text = "Cancel"
-
-[node name="RotationLockLabel" type="Label" parent="Confirmation"]
-visible = false
-layout_mode = 0
-offset_left = 359.0
-offset_top = 567.0
-offset_right = 609.0
-offset_bottom = 603.0
-text = "Rotation Lock Recommended"
-label_settings = SubResource("LabelSettings_7b55j")
 
 [node name="RotateArrow" type="Sprite2D" parent="Confirmation"]
 position = Vector2(416, 300)
@@ -235,9 +242,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -91.0
-offset_top = -30.0
+offset_top = -120.0
 offset_right = 91.75
-offset_bottom = 31.0
+offset_bottom = -59.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/up_hover_icon_modulate = Color(0, 0, 0, 1)
@@ -261,6 +268,22 @@ alignment = 2
 update_on_text_changed = true
 suffix = "ms"
 custom_arrow_step = 4.0
+
+[node name="LRButtonLabel" type="Label" parent="LatencyCheck/SpinBox"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -3.75
+offset_top = -25.5
+offset_right = 60.25
+offset_bottom = 25.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "L/R"
+vertical_alignment = 1
 
 [node name="EventfulAudioStreamPlayer" type="AudioStreamPlayer" parent="LatencyCheck"]
 stream = ExtResource("11_flqon")
@@ -296,9 +319,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -240.0
-offset_top = -240.0
+offset_top = -330.0
 offset_right = 240.0
-offset_bottom = -200.0
+offset_bottom = -290.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -320,10 +343,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -95.0
-offset_top = -175.0
-offset_right = 95.0
-offset_bottom = -120.0
+offset_left = -127.0
+offset_top = -265.0
+offset_right = 127.0
+offset_bottom = -210.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Confirm Latency"
@@ -335,19 +358,3 @@ offset_top = 549.0
 offset_right = 156.0
 offset_bottom = 604.0
 text = "Cancel"
-
-[node name="LRButtonLabel" type="Label" parent="LatencyCheck"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -225.0
-offset_top = -25.0
-offset_right = -161.0
-offset_bottom = 26.0
-grow_horizontal = 0
-grow_vertical = 2
-text = "L/R"
-vertical_alignment = 1

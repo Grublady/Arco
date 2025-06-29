@@ -81,8 +81,8 @@ project/breakpoints={
 "res://scripts/rotation_input.gd": PackedInt32Array()
 }
 project/editorState=[{
-"column": 22,
-"line": 27,
+"column": 0,
+"line": 15,
 "path": "res://scripts/main_menu.gd",
 "type": "file"
 }, {
@@ -124,7 +124,7 @@ project/editorState=[{
 "path": "res://scripts/input_mode_button.gd",
 "type": "file"
 }, {
-"column": 77,
+"column": 33,
 "current": true,
 "line": 3,
 "path": "res://scripts/latency_check.gd",

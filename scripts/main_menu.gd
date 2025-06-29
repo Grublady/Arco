@@ -7,9 +7,11 @@ func finish() -> void:
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 
 func show_input_modes() -> void:
+	$Title.show()
 	$InputModeSelection.show()
 	$InputModeSelection/ButtonContainer/SensorsButton.grab_focus()
 func hide_input_modes() -> void:
+	$Title.hide()
 	$InputModeSelection.hide()
 
 func show_input_confirmation() -> void:
@@ -17,7 +19,7 @@ func show_input_confirmation() -> void:
 	$Confirmation.process_mode = Node.PROCESS_MODE_INHERIT
 	RotationInput.rotation = 0
 	selection_rotator.rotating = true
-	$Confirmation/RotationLockLabel.visible = (RotationInput.mode == RotationInput.Mode.sensor)
+	$Confirmation/Rotator2D/RotationLockLabel.visible = (RotationInput.mode == RotationInput.Mode.sensor)
 func hide_input_confirmation() -> void:
 	$Confirmation.hide()
 	$Confirmation.process_mode = Node.PROCESS_MODE_DISABLED

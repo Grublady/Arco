@@ -1,7 +1,7 @@
 extends Control
 
 func start() -> void:
-	$LRButtonLabel.visible = (RotationInput.mode == RotationInput.Mode.joystick)
+	$SpinBox/LRButtonLabel.visible = (RotationInput.mode == RotationInput.Mode.joystick)
 	show()
 	$EventfulAudioStreamPlayer.play()
 	$ConfirmButton.grab_focus()
