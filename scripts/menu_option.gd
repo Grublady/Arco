@@ -1,7 +1,5 @@
 extends Label
 
-signal pressed
-
 @export var active := false:
 	set = _set_active
 @export var rotating := true
@@ -28,8 +26,8 @@ func _process(_delta: float) -> void:
 func _set_active(new_value: bool) -> void:
 	active = new_value
 	if active:
-		self_modulate = Color(1, 1, 1, 0.5)
+		self_modulate.a = 1
 		$Panel.show()
 	else:
-		self_modulate = Color(0.5, 0.5, 0.5, 1)
+		self_modulate.a = 0.7
 		$Panel.hide()

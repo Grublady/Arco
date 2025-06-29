@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" load_steps=3 format=3 uid="uid://oaqf7bl0b845"]
+
+[ext_resource type="SystemFont" uid="uid://7tbqh57wvo12" path="res://resources/base_font.tres" id="1_61fmp"]
+
+[sub_resource type="FontVariation" id="FontVariation_xh7n7"]
+base_font = ExtResource("1_61fmp")
+variation_transform = Transform2D(1, 0.33, 0, 1, 0, 0)
+
+[resource]
+font = SubResource("FontVariation_xh7n7")
+font_size = 20

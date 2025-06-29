@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://ygtrimm8jn2r" path="res://scripts/input_mode_sensors_button.gd" id="4_8ln24"]
 [ext_resource type="Script" uid="uid://cxln43a233oir" path="res://scripts/input_mode_button.gd" id="4_wu84c"]
 [ext_resource type="PackedScene" uid="uid://q6ahn5v6mmjq" path="res://scenes/press_target.tscn" id="5_5pajh"]
-[ext_resource type="LabelSettings" uid="uid://ryey1oo7qh5j" path="res://ls.tres" id="6_a8gd2"]
 [ext_resource type="Script" uid="uid://pqsscp47tjbh" path="res://scripts/rotator_2d.gd" id="7_jk1qb"]
 [ext_resource type="Script" uid="uid://coejdc7tqlu5s" path="res://scripts/arc_2d.gd" id="8_5dd4i"]
 [ext_resource type="PackedScene" uid="uid://ia87tskeu176" path="res://scenes/menu_option.tscn" id="9_jk1qb"]
@@ -45,6 +44,9 @@ font = SubResource("FontVariation_rtw2f")
 font_size = 32
 outline_size = 4
 outline_color = Color(0.190887, 0.0804901, 0.391968, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5pajh"]
+font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_wu84c"]
 font = SubResource("FontVariation_rtw2f")
@@ -183,7 +185,7 @@ offset_right = 241.5
 offset_bottom = -117.0
 grow_horizontal = 2
 text = "Rotation Lock Recommended"
-label_settings = ExtResource("6_a8gd2")
+label_settings = SubResource("LabelSettings_5pajh")
 
 [node name="ConfirmOption" parent="Confirmation" instance=ExtResource("9_jk1qb")]
 layout_mode = 1

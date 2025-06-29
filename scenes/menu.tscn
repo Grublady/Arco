@@ -8,13 +8,10 @@
 [ext_resource type="Script" uid="uid://coejdc7tqlu5s" path="res://scripts/arc_2d.gd" id="3_mae5d"]
 [ext_resource type="PackedScene" uid="uid://ia87tskeu176" path="res://scenes/menu_option.tscn" id="6_g3eks"]
 [ext_resource type="SystemFont" uid="uid://7tbqh57wvo12" path="res://resources/base_font.tres" id="7_v86rl"]
+[ext_resource type="LabelSettings" uid="uid://oaqf7bl0b845" path="res://resources/song_option_label_settings.tres" id="8_13sgg"]
 
-[sub_resource type="FontVariation" id="FontVariation_xh7n7"]
-base_font = ExtResource("7_v86rl")
-variation_transform = Transform2D(1, 0.33, 0, 1, 0, 0)
-
-[sub_resource type="LabelSettings" id="LabelSettings_13sgg"]
-font = SubResource("FontVariation_xh7n7")
+[sub_resource type="LabelSettings" id="LabelSettings_i6lef"]
+font = ExtResource("7_v86rl")
 font_size = 20
 
 [node name="Menu" type="Node2D"]
@@ -80,4 +77,13 @@ offset_top = -169.0
 offset_right = 100.0
 offset_bottom = -109.0
 text = "A Xogot Jam Jam"
-label_settings = SubResource("LabelSettings_13sgg")
+label_settings = ExtResource("8_13sgg")
+
+[node name="MainMenuOption" parent="." instance=ExtResource("6_g3eks")]
+offset_left = -100.0
+offset_top = 160.0
+offset_right = 100.0
+offset_bottom = 229.0
+text = "Back to
+Main Menu"
+label_settings = SubResource("LabelSettings_i6lef")

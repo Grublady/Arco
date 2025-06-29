@@ -89,8 +89,8 @@ project/editorState=[{
 "title": "Control",
 "type": "doc"
 }, {
-"column": 9,
-"line": 13,
+"column": 47,
+"line": 4,
 "path": "res://scripts/menu.gd",
 "type": "file"
 }, {
@@ -124,10 +124,15 @@ project/editorState=[{
 "path": "res://scripts/input_mode_button.gd",
 "type": "file"
 }, {
-"column": 33,
-"current": true,
-"line": 3,
+"column": 0,
+"line": 1,
 "path": "res://scripts/latency_check.gd",
+"type": "file"
+}, {
+"column": 0,
+"current": true,
+"line": 0,
+"path": "res://scripts/menu_option.gd",
 "type": "file"
 }]
 project/xogot_game_id="834_xogot-jam"
