@@ -1,5 +1,7 @@
 class_name WebSensors
 
+static var permission_callbacks: Array[Callable] = []
+
 static var is_setup: bool = false
 
 static var _orientation: JavaScriptObject
@@ -7,12 +9,25 @@ static var _acceleration: JavaScriptObject
 static var _gravity: JavaScriptObject
 static var _gyroscope: JavaScriptObject
 
+static var _permission_callback := JavaScriptBridge.create_callback(_on_permission_callback)
+
+static func _on_permission_callback(args: Array) -> void:
+	for callback in permission_callbacks:
+		callback.call(args)
+	permission_callbacks = []
+
+static func _static_init() -> void:
+	if not OS.has_feature("web"):
+		return
+	JavaScriptBridge.eval("var _godotPermissionHelper = {}", true)
+	JavaScriptBridge.get_interface("_godotPermissionHelper").callback = _permission_callback
+
 static func request_permission() -> void:
 	if not OS.has_feature("web"):
 		return
 	JavaScriptBridge.eval("""
 if (typeof DeviceMotionEvent.requestPermission === "function") {
-	DeviceMotionEvent.requestPermission()
+	DeviceMotionEvent.requestPermission().then(_godotPermissionHelper.callback)
 }
 	""", true)
 

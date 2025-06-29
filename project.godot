@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Xogot Jam"
+config/name="Arco"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.4", "Mobile")
 run/max_fps="240"
@@ -104,8 +104,8 @@ project/editorState=[{
 "path": "res://scripts/rotator_2d.gd",
 "type": "file"
 }, {
-"column": 38,
-"line": 19,
+"column": 20,
+"line": 23,
 "path": "res://scripts/rotation_input.gd",
 "type": "file"
 }, {
@@ -130,9 +130,30 @@ project/editorState=[{
 "type": "file"
 }, {
 "column": 0,
-"current": true,
-"line": 0,
+"line": 1,
 "path": "res://scripts/menu_option.gd",
 "type": "file"
+}, {
+"column": 7,
+"current": true,
+"line": 9,
+"path": "res://scripts/web_sensors.gd",
+"type": "file"
+}, {
+"title": "JavaScriptObject",
+"type": "doc"
+}, {
+"title": "JavaScriptBridge",
+"type": "doc"
+}, {
+"column": 0,
+"line": 0,
+"path": "res://scripts/ui_rotator.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 0,
+"path": "res://scripts/web_permissions_button.gd",
+"type": "file"
 }]
-project/xogot_game_id="834_xogot-jam"
+project/xogot_game_id="834_arco"
