@@ -19,10 +19,10 @@ func show_input_confirmation() -> void:
 	RotationInput.rotation = 0
 	selection_rotator.rotating = true
 	if RotationInput.mode == RotationInput.Mode.sensor:
-		$Confirmation/RotationLockLabel.show()
+		$Confirmation/Rotator2D/RotationLockLabel.show()
 		$Confirmation/ConfirmOption.rotation = PI
 	else:
-		$Confirmation/RotationLockLabel.hide()
+		$Confirmation/Rotator2D/RotationLockLabel.hide()
 		$Confirmation/ConfirmOption.rotation = 0
 func hide_input_confirmation() -> void:
 	$Confirmation.hide()
@@ -54,7 +54,7 @@ func _process(_delta: float) -> void:
 	var active: bool = $Confirmation/ConfirmOption.active
 	$Confirmation/RotateArrow.visible = (not active)
 	$Confirmation/RotateArrow2.visible = (not active)
-	$Confirmation/RotationLockLabel.visible = (RotationInput.mode == RotationInput.Mode.sensor and not active)
+	$Confirmation/Rotator2D/RotationLockLabel.visible = (RotationInput.mode == RotationInput.Mode.sensor and not active)
 	$Confirmation/Rotator2D/TutorialLabel.visible = (not active)
 
 func _unhandled_input(event: InputEvent) -> void:

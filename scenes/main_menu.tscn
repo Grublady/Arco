@@ -161,21 +161,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="RotationLockLabel" type="Label" parent="Confirmation"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -241.0
-offset_top = 76.0
-offset_right = 242.0
-offset_bottom = 189.0
-grow_horizontal = 2
-text = "Please Enable
-Rotation Lock"
-label_settings = SubResource("LabelSettings_5pajh")
-horizontal_alignment = 1
-
 [node name="RotateArrow" type="Sprite2D" parent="Confirmation"]
 position = Vector2(415, 295)
 rotation = -0.366181
@@ -193,6 +178,20 @@ position = Vector2(320, 320)
 script = ExtResource("7_jk1qb")
 auto_offset_enabled = false
 metadata/_custom_type_script = "uid://pqsscp47tjbh"
+
+[node name="RotationLockLabel" type="Label" parent="Confirmation/Rotator2D"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -241.0
+offset_top = -244.0
+offset_right = 242.0
+offset_bottom = -131.0
+grow_horizontal = 2
+text = "Please Enable
+Rotation Lock"
+label_settings = SubResource("LabelSettings_5pajh")
+horizontal_alignment = 1
 
 [node name="Arc2D" type="Node2D" parent="Confirmation/Rotator2D"]
 script = ExtResource("8_5dd4i")
