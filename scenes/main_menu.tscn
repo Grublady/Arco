@@ -195,9 +195,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -100.0
-offset_top = -152.0
+offset_top = -202.0
 offset_right = 100.0
-offset_bottom = -92.0
+offset_bottom = -142.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Confirm"
@@ -212,18 +212,25 @@ offset_right = 156.0
 offset_bottom = 604.0
 text = "Cancel"
 
+[node name="ResetButton" type="Button" parent="Confirmation"]
+layout_mode = 0
+offset_left = 338.0
+offset_top = 549.0
+offset_right = 607.0
+offset_bottom = 604.0
+text = "Reset Orientation"
+
 [node name="RotateArrow" type="Sprite2D" parent="Confirmation"]
-position = Vector2(416, 300)
-rotation = -0.261799
+position = Vector2(415, 295)
+rotation = -0.366181
 scale = Vector2(0.5, 0.392352)
 texture = ExtResource("11_5pajh")
 
 [node name="RotateArrow2" type="Sprite2D" parent="Confirmation"]
-position = Vector2(224, 300)
-rotation = 0.262403
+position = Vector2(404, 392)
+rotation = 0.575005
 scale = Vector2(0.5, 0.392352)
 texture = ExtResource("11_5pajh")
-flip_h = true
 
 [node name="LatencyCheck" type="Control" parent="."]
 visible = false

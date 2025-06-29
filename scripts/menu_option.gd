@@ -26,8 +26,8 @@ func _process(_delta: float) -> void:
 func _set_active(new_value: bool) -> void:
 	active = new_value
 	if active:
-		self_modulate.a = 1
+		self_modulate = Color.WHITE
 		$Panel.show()
 	else:
-		self_modulate.a = 0.7
+		self_modulate = Color(0.6, 0.6, 0.6, 0.8)
 		$Panel.hide()

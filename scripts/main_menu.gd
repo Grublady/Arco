@@ -51,6 +51,8 @@ func _ready() -> void:
 	
 	$LatencyCheck/ConfirmButton.pressed.connect(finish)
 	
+	$Confirmation/ResetButton.pressed.connect(RotationInput.calibrate)
+	
 	$Confirmation.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	$InputModeSelection/ButtonContainer/SensorsButton.grab_focus()
@@ -59,6 +61,7 @@ func _process(_delta: float) -> void:
 	var active: bool = $Confirmation/ConfirmOption.active
 	$Confirmation/RotateArrow.visible = (not active)
 	$Confirmation/RotateArrow2.visible = (not active)
+	$Confirmation/Rotator2D/RotationLockLabel.visible = (not active)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):

@@ -84,6 +84,6 @@ offset_left = -100.0
 offset_top = 160.0
 offset_right = 100.0
 offset_bottom = 229.0
-text = "Back to
-Main Menu"
+text = "Exit to
+Title Menu"
 label_settings = SubResource("LabelSettings_i6lef")
