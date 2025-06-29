@@ -76,7 +76,8 @@ offset_left = -234.0
 offset_top = -144.0
 offset_right = -34.0
 offset_bottom = -84.0
-text = "A Xogot Jam Jam"
+text = "A Xogot Jam Jam
+(Normal)"
 label_settings = ExtResource("8_13sgg")
 
 [node name="SongOakwoodOption" parent="." instance=ExtResource("6_g3eks")]
@@ -84,7 +85,8 @@ offset_left = 34.0
 offset_top = -144.0
 offset_right = 234.0
 offset_bottom = -84.0
-text = "Oakwood"
+text = "Oakwood
+(Expert)"
 label_settings = ExtResource("8_13sgg")
 
 [node name="MainMenuOption" parent="." instance=ExtResource("6_g3eks")]
