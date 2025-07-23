@@ -120,7 +120,7 @@ project/editorState=[{
 "path": "res://scripts/input_mode_button.gd",
 "type": "file"
 }, {
-"column": 35,
+"column": 0,
 "line": 16,
 "path": "res://scripts/latency_check.gd",
 "type": "file"
@@ -161,7 +161,7 @@ project/editorState=[{
 "path": "res://scripts/settings.gd",
 "type": "file"
 }, {
-"column": 23,
+"column": 0,
 "current": true,
 "line": 69,
 "path": "res://scripts/eventful_audio_stream_player.gd",
